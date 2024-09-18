@@ -6,7 +6,7 @@ import Image from 'next/image'
 function Hero() {
   return (
     <div className="relative mx-auto flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md px-4 py-8 sm:px-6 md:h-[30rem] md:px-8 lg:h-[40rem] lg:px-10 lg:py-12">
-      <div className='items-center justify-center'>
+      <div className="items-center justify-center">
         <Image src="/contactpriyanshu2.png" height={600} width={600} alt="priyanshu" />
       </div>
       <div className="text-center">
@@ -19,11 +19,14 @@ function Hero() {
         </p>
       </div>
       <div className="items-center justify-center py-4">
-      <Button variant={"link"} className='bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-950'>
+        <Button
+          variant={'link'}
+          className="bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-950"
+        >
           <Link href={'/#steps'} scroll={true}>
             Read Now
           </Link>
-  </Button>
+        </Button>
       </div>
     </div>
   )

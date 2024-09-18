@@ -6,5 +6,4 @@ All notable changes to this project will be documented in this file.
 
 ## Features
 
-- Stable initial release ([77ca536](https://github.com/nsgpriyanshu/contact-priyanshu/commit/77ca536dda571f496fe69d6f22772bff6c30f038))
-
+- Stable initial release ([77ca536](https://github.com/nsgpriyanshu/nsmail/commit/77ca536dda571f496fe69d6f22772bff6c30f038))

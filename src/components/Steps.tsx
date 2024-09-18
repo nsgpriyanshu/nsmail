@@ -3,7 +3,10 @@ import Image from 'next/image'
 
 function Steps() {
   return (
-    <div id="steps" className="relative mx-auto flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md px-4 py-8 sm:px-6 md:px-8 lg:px-10 lg:py-12">
+    <div
+      id="steps"
+      className="relative mx-auto flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md px-4 py-8 sm:px-6 md:px-8 lg:px-10 lg:py-12"
+    >
       {/* Step 1: Read Books Carefully */}
       <div className="lg:w-lg md:w-md mb-12 flex w-full items-center justify-center gap-4 md:flex-row">
         <Image
