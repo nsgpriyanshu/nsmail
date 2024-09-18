@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.2.1](https://github.com/nsgpriyanshu/nsmail/compare/0.2.0...0.2.1) - (2024-09-18)
+
+## Bug Fixes
+
+- Some basic bugs ([ceff489](https://github.com/nsgpriyanshu/nsmail/commit/ceff489201cb4cca604a5839c1004eae5326291d))
+- Indentation ([3d4f759](https://github.com/nsgpriyanshu/nsmail/commit/3d4f759d7a9ccd2f847151fcc5df5e8c9ec9a3aa))
+
 # [0.2.0](https://github.com/nsgpriyanshu/nsmail/tree/0.2.0) - (2024-09-18)
 
 ## Features
