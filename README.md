@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nsMail
 
-## Getting Started
+## About
 
-First, run the development server:
+nsMail is a contact/mail page solution I developed without using any databases. To maintain privacy and security, I utilized Discord to store messages for free. By integrating webhook technology with my website, any feedback or messages sent through the form are automatically stored in my Discord server.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> [!IMPORTANT]
+> This project is designed for personal use. However, you are welcome to use the source code, edit it, and make it your own. Be sure to update the webhook `URL` in your `.env.local` file with your own configuration to ensure it works properly.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design**: Adapts seamlessly to various screen sizes and devices.
+- **Sleek UI**: Provides a modern and user-friendly interface.
+- **Dark and Light Modes**: Offers both dark and light theme options to suit user preferences.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technology Used
 
-## Learn More
+- **Next.js**: Utilized with the app router for building the web application.
+- **shadcn/UI**: Used for creating the user interface.
+- **Discord Webhooks**: Employed for message storage and management.
 
-To learn more about Next.js, take a look at the following resources:
+## Acknowledgements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Special thanks to Next.js and shadcn/UI for their tools and resources that facilitated the development of this project.
