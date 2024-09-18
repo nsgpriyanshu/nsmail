@@ -14,8 +14,8 @@ function Hero() {
           Follow a vision and think differently
         </h1>
         <p className="mx-auto mt-4 max-w-[45rem] text-base text-neutral-800 dark:text-neutral-400 sm:text-lg md:text-xl lg:text-2xl">
-          Ohh, again, you've got your doubts, huh? Well, let me know what your problem is—but make
-          sure to read the stuff below first.
+          Ohh, again, you&apos;ve got your doubts, huh? Well, let me know what your problem is—but
+          make sure to read the stuff below first.
         </p>
       </div>
       <div className="items-center justify-center py-4">

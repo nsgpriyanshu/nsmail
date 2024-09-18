@@ -13,8 +13,8 @@ export function FandQ() {
           Frequently Asked Questions
         </h1>
         <p className="mx-auto mt-4 max-w-[45rem] text-base text-neutral-800 dark:text-neutral-400 sm:text-lg md:text-xl lg:text-2xl">
-          Here are some common questions and answers that might help you find the information you're
-          looking for.
+          Here are some common questions and answers that might help you find the information
+          you&apos;re looking for.
         </p>
       </div>
       <Accordion type="single" collapsible className="w-full md:w-[40rem] lg:w-[60rem]">
@@ -40,7 +40,7 @@ export function FandQ() {
             How does the service work?
           </AccordionTrigger>
           <AccordionContent className="md:text-md text-base text-neutral-800 dark:text-neutral-400 sm:text-lg lg:text-xl">
-            Our service utilizes modern technology combined with Priyanshu's specialized API to
+            Our service utilizes modern technology combined with Priyanshu&apos;s specialized API to
             deliver efficient and effective results.
           </AccordionContent>
         </AccordionItem>

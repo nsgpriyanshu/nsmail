@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-# [0.2.0](https://github.com/nsgpriyanshu/contact-priyanshu/tree/0.2.0) - (2024-09-18)
+# [0.2.0](https://github.com/nsgpriyanshu/nsmail/tree/0.2.0) - (2024-09-18)
 
 ## Features
 
