@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.2.2](https://github.com/nsgpriyanshu/nsmail/compare/0.2.1...0.2.2) - (2024-09-18)
+
+## Bug Fixes
+
+- Api error ([b7bd4f9](https://github.com/nsgpriyanshu/nsmail/commit/b7bd4f9ca14ee55bfef92e864f20e1c39ae89450))
+
 # [0.2.1](https://github.com/nsgpriyanshu/nsmail/compare/0.2.0...0.2.1) - (2024-09-18)
 
 ## Bug Fixes
