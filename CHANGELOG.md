@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.2.3](https://github.com/nsgpriyanshu/nsmail/compare/0.2.2...0.2.3) - (2024-10-06)
+
+## Non Code changes
+
+- Remove nsg word for privacy ([be8c3a4](https://github.com/nsgpriyanshu/nsmail/commit/be8c3a476fe0bb7a9aeb343f7ab3564b4da64af3))
+
 # [0.2.2](https://github.com/nsgpriyanshu/nsmail/compare/0.2.1...0.2.2) - (2024-09-18)
 
 ## Bug Fixes
