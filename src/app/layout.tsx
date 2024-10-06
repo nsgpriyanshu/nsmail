@@ -16,7 +16,7 @@ const geistMono = localFont({
 })
 
 const siteName = 'contac@priyanshu'
-const siteDescription = "It's the personal contact form of nsgpriyanshu"
+const siteDescription = "It's the personal contact form of priyanshu"
 const twitter = 'https://twitter.com/nsgpriyanshu'
 const siteUrl = 'https://nsgpriyanshu.github.io/contact-priyanshu/'
 const ogImage = `${siteUrl}preview.png`
