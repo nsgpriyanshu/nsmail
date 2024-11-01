@@ -11,37 +11,46 @@ function ContactForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [file, setFile] = useState<File | null>(null)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files ? e.target.files[0] : null
+    setFile(selectedFile)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const payload = { name, email, message }
+    const formData = new FormData()
+    formData.append('name', name)
+    formData.append('email', email)
+    formData.append('message', message)
+    if (file) formData.append('file', file)
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: formData,
       })
 
       if (response.ok) {
-        setSuccess(true) // Set success state to true
+        setSuccess(true)
         setName('')
         setEmail('')
         setMessage('')
+        setFile(null)
       } else {
-        setError('Failed to submit form.') // Set error message
+        setError('Failed to submit form.')
       }
     } catch (error) {
-      setError('An unexpected error occurred.') // Set error message
+      setError('An unexpected error occurred.')
     }
   }
 
   return (
     <div className="relative mx-auto flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg px-4 py-12 sm:px-8 md:px-12 lg:px-16 lg:py-16">
-      {/* Heading Section */}
       <div className="text-center">
         <h1 className="mb-4 text-xl font-bold leading-tight tracking-tighter text-neutral-800 dark:text-neutral-200 sm:text-xl md:text-3xl lg:text-4xl lg:leading-[1.1]">
           Please lemme know your doubt through the form below!
@@ -51,7 +60,6 @@ function ContactForm() {
         </p>
       </div>
 
-      {/* Contact Form Area */}
       <div className="w-full max-w-xl py-6">
         <Card className="mx-auto w-full max-w-xl rounded-lg text-neutral-100 shadow-lg dark:bg-zinc-950">
           <CardHeader className="text-center">
@@ -62,7 +70,6 @@ function ContactForm() {
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <CardContent className="space-y-6 px-8 py-6">
-              {/* Name Field */}
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-neutral-800 dark:text-neutral-400">
                   Name
@@ -77,7 +84,6 @@ function ContactForm() {
                 />
               </div>
 
-              {/* Email Field */}
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-neutral-800 dark:text-neutral-400">
                   Email
@@ -93,7 +99,6 @@ function ContactForm() {
                 />
               </div>
 
-              {/* Message Field */}
               <div className="space-y-2">
                 <Label htmlFor="message" className="text-neutral-800 dark:text-neutral-400">
                   Message
@@ -108,9 +113,22 @@ function ContactForm() {
                   required
                 />
               </div>
+
+              {/* File Upload Field */}
+              <div className="space-y-2">
+                <Label htmlFor="file" className="text-neutral-800 dark:text-neutral-400">
+                  Attach File
+                </Label>
+                <Input
+                  id="file"
+                  type="file"
+                  onChange={handleFileChange}
+                  accept=".png,.jpg,.jpeg,.pdf,.doc,.docx,.xls,.xlsx"
+                  className="text-neutral-900 dark:text-neutral-100"
+                />
+              </div>
             </CardContent>
 
-            {/* Submit Button */}
             <CardFooter className="px-8 pb-8">
               <Button variant="default" type="submit" className="w-full py-3 text-lg">
                 Send Message
@@ -120,7 +138,6 @@ function ContactForm() {
         </Card>
       </div>
 
-      {/* Success/Error Popup */}
       {success && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="rounded-md bg-neutral-200 p-6 text-center shadow-md dark:bg-zinc-950">
