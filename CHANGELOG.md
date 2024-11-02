@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.3.0](https://github.com/nsgpriyanshu/nsmail/compare/0.2.3...0.3.0) - (2024-11-02)
+
+## Features
+
+- Add attachment section ([91e1706](https://github.com/nsgpriyanshu/nsmail/commit/91e170632b0462291b33eac78c1621f80323a118))
+
+## Styling
+
+- Fix styling ([357e94a](https://github.com/nsgpriyanshu/nsmail/commit/357e94a2fe650ee74d3f99847ea0d86a0a800014))
+
 # [0.2.3](https://github.com/nsgpriyanshu/nsmail/compare/0.2.2...0.2.3) - (2024-10-06)
 
 ## Non Code changes
