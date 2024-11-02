@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.3.1](https://github.com/nsgpriyanshu/nsmail/compare/0.3.0...0.3.1) - (2024-11-02)
+
+## Bug Fixes
+
+- Og image and style ([9ff0deb](https://github.com/nsgpriyanshu/nsmail/commit/9ff0deb6b93145f92ec3c6d54b4cacab1acfeaf1))
+
 # [0.3.0](https://github.com/nsgpriyanshu/nsmail/compare/0.2.3...0.3.0) - (2024-11-02)
 
 ## Features
