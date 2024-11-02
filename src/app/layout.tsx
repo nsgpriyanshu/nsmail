@@ -15,8 +15,8 @@ const siteName = 'contac@priyanshu'
 const siteDescription = "It's the personal contact form of priyanshu"
 const twitter = 'https://twitter.com/nsgpriyanshu'
 const siteUrl = 'https://contact-priyanshu-ps.vercel.app'
-const ogImage = `contact-priyanshu-ps.vercel.app/preview.png`
-const twitterImage = `contact-priyanshu-ps.vercel.app/preview.png`
+const ogImage = `https://contact-priyanshu-ps.vercel.app/preview.png`
+const twitterImage = `https://contact-priyanshu-ps.vercel.app/preview.png`
 
 export const viewport: Viewport = {
   themeColor: '#1c1917',
