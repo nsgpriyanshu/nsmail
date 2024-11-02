@@ -1,5 +1,7 @@
 # nsMail
 
+<img src="https://github.com/nsgpriyanshu/nsgpriyanshu.github.io/blob/main/v2%2Fpublic%2Fassets%2Fpreview.png" alt="preview"/>   
+
 ## About
 
 nsMail is a contact/mail page solution I developed without using any databases. To maintain privacy and security, I utilized Discord to store messages for free. By integrating webhook technology with my website, any feedback or messages sent through the form are automatically stored in my Discord server.
