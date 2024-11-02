@@ -14,16 +14,16 @@ const hubot = localFont({
 const siteName = 'contac@priyanshu'
 const siteDescription = "It's the personal contact form of priyanshu"
 const twitter = 'https://twitter.com/nsgpriyanshu'
-const siteUrl = 'https://nsgpriyanshu.github.io/contact-priyanshu/'
-const ogImage = `${siteUrl}preview.png`
-const twitterImage = `${siteUrl}preview.png`
+const siteUrl = 'https://contact-priyanshu-ps.vercel.app'
+const ogImage = `contact-priyanshu-ps.vercel.app/preview.png`
+const twitterImage = `contact-priyanshu-ps.vercel.app/preview.png`
 
 export const viewport: Viewport = {
   themeColor: '#1c1917',
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nsgpriyanshu.github.io/contact-priyanshu/'),
+  metadataBase: new URL('https://contact-priyanshu-ps.vercel.app'),
   title: {
     template: `%s - ${siteName}`,
     default: siteName,

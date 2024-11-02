@@ -8,7 +8,20 @@ function Hero() {
   return (
     <div className="relative mx-auto flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md px-4 py-8 sm:px-6 md:h-[30rem] md:px-8 lg:h-[40rem] lg:px-10 lg:py-12">
       <div className="z-[999999] items-center justify-center">
-        <Image src="/contactpriyanshu2.png" height={600} width={600} alt="priyanshu" />
+        <Image
+          src="/contactpriyanshu2.png"
+          height={600}
+          width={600}
+          alt="priyanshu"
+          className="hidden dark:block"
+        />
+        <Image
+          src="/cps.png"
+          height={600}
+          width={600}
+          alt="priyanshu"
+          className="block dark:hidden"
+        />
       </div>
       <AnimationContainer customClassName="z-[999999]">
         <div className="text-center">
