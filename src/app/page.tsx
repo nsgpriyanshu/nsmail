@@ -6,7 +6,7 @@ import Steps from '@/components/Steps'
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full items-center justify-center bg-neutral-200 dark:bg-zinc-950">
+    <div className="min-h-screen w-full items-center justify-center">
       <Header />
       <Hero />
       <ContactForm />

@@ -1,18 +1,14 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
 import Footer from '@/components/Footer'
+import { ThemeProvider } from 'next-themes'
+import { Toaster } from '@/components/ui/toaster'
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-})
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+const hubot = localFont({
+  src: './fonts/HubotSans.woff2',
+  variable: '--font-hubot',
+  weight: '400 900',
 })
 
 const siteName = 'contac@priyanshu'
@@ -22,11 +18,15 @@ const siteUrl = 'https://nsgpriyanshu.github.io/contact-priyanshu/'
 const ogImage = `${siteUrl}preview.png`
 const twitterImage = `${siteUrl}preview.png`
 
+export const viewport: Viewport = {
+  themeColor: '#1c1917',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://nsgpriyanshu.github.io/contact-priyanshu/'),
   title: {
-    default: siteName,
     template: `%s - ${siteName}`,
+    default: siteName,
   },
   description: siteDescription,
   keywords: 'Discord, contact from, data store, nextjs, web',
@@ -72,15 +72,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${hubot.variable} ${hubot.variable} antialiased selection:bg-violet-600/90 dark:bg-[#1c1917] dark:text-rose-100/90`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <svg
+            className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light"
+            width="100%"
+            height="100%"
+          >
+            <filter id="noise">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.80"
+                numOctaves="4"
+                stitchTiles="stitch"
+              />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#noise)" />
+          </svg>
           {children}
           <Footer />
+          <Toaster />
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div className="h-full bg-top bg-no-repeat opacity-[0.3] dark:bg-[url('https://res.cloudinary.com/delba/image/upload/h_500/bg_gradient_pfosr9')]" />
+          </div>
         </ThemeProvider>
       </body>
     </html>
