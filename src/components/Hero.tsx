@@ -7,23 +7,25 @@ import AnimationContainer from './global/animation'
 function Hero() {
   return (
     <div className="relative mx-auto flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-md px-4 py-8 sm:px-6 md:h-[30rem] md:px-8 lg:h-[40rem] lg:px-10 lg:py-12">
-      <div className="z-[999999] items-center justify-center">
-        <Image
-          src="/contactpriyanshu2.png"
-          height={600}
-          width={600}
-          alt="priyanshu"
-          className="hidden dark:block"
-        />
-        <Image
-          src="/cps.png"
-          height={600}
-          width={600}
-          alt="priyanshu"
-          className="block dark:hidden"
-        />
-      </div>
-      <AnimationContainer customClassName="z-[999999]">
+      <AnimationContainer customDelay={0.1}>
+        <div className="z-[999999] items-center justify-center">
+          <Image
+            src="/contactpriyanshu2.png"
+            height={600}
+            width={600}
+            alt="priyanshu"
+            className="hidden dark:block"
+          />
+          <Image
+            src="/cps.png"
+            height={600}
+            width={600}
+            alt="priyanshu"
+            className="block dark:hidden"
+          />
+        </div>
+      </AnimationContainer>
+      <AnimationContainer customClassName="z-[999999]" customDelay={0.2}>
         <div className="text-center">
           <h1 className="mb-4 text-3xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl lg:leading-[1.1]">
             Follow a vision and think differently
@@ -34,7 +36,7 @@ function Hero() {
           </p>
         </div>
       </AnimationContainer>
-      <AnimationContainer>
+      <AnimationContainer customDelay={0.3}>
         <div className="items-center justify-center py-4">
           <Button
             variant={'link'}
