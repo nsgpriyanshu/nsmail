@@ -4,11 +4,13 @@ import './globals.css'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from '@/components/ui/toaster'
+import { clsx } from 'clsx'
 
 const hubot = localFont({
-  src: './fonts/HubotSans.woff2',
+  src: './fonts/HubotSans.woff',
   variable: '--font-hubot',
   weight: '400 900',
+  display: 'swap'
 })
 
 const siteName = 'contac@priyanshu'
@@ -71,10 +73,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={hubot.variable}>
       <body
-        className={`${hubot.variable} ${hubot.variable} antialiased selection:bg-violet-600/90 dark:bg-[#1c1917] dark:text-rose-100/90`}
-      >
+        className={clsx(
+          "font-sans antialiased selection:bg-violet-600/90 dark:bg-[#1c1917] dark:text-rose-100/90",
+        )}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
