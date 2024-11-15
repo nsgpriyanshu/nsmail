@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.3.2](https://github.com/nsgpriyanshu/nsmail/compare/0.3.1...0.3.2) - (2024-11-15)
+
+## Bug Fixes
+
+- Some minor bugs ([a0843e9](https://github.com/nsgpriyanshu/nsmail/commit/a0843e9991bcef2f3ea127f822c183d5ae3eb7cd))
+- Color in h2 tag ([5e4c90a](https://github.com/nsgpriyanshu/nsmail/commit/5e4c90aedfb26940d1c2aceb3a31f487c97cd96b))
+
+## Non Code changes
+
+- Cmt msg ([cfdf732](https://github.com/nsgpriyanshu/nsmail/commit/cfdf7326c39bce76c14f2e176feb60ce9b0cfbc3))
+- Preview image ([dea174a](https://github.com/nsgpriyanshu/nsmail/commit/dea174a21421394561a1c12369771a008c6956c4))
+- Typo ([a1d1a69](https://github.com/nsgpriyanshu/nsmail/commit/a1d1a696699a4f955d7b4c17f474bef8777a1c58))
+
+## Styling
+
+- Preview image on readme.md ([fbf868a](https://github.com/nsgpriyanshu/nsmail/commit/fbf868aba6b932cd8e30644a3b9bdd5970b3a9c5))
+- Enhance soem minor layout errors ([4bbc4e4](https://github.com/nsgpriyanshu/nsmail/commit/4bbc4e4077ac83b44369d723ff40d03602e98bc8))
+
 # [0.3.1](https://github.com/nsgpriyanshu/nsmail/compare/0.3.0...0.3.1) - (2024-11-02)
 
 ## Bug Fixes
