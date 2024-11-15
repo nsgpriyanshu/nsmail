@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        "hubot": ["var(--font-hubot)"]
+        hubot: ['var(--font-hubot)'],
       },
       colors: {
         background: 'hsl(var(--background))',

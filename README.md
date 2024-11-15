@@ -1,6 +1,6 @@
 # nsMail
 
-<img src="https://github.com/nsgpriyanshu/nsmail/blob/main/public%2Fpreview.png" alt="preview"/>   
+<img src="https://github.com/nsgpriyanshu/nsmail/blob/main/public%2Fpreview.png" alt="preview"/>
 
 ## About
 

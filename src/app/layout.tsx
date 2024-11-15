@@ -10,7 +10,7 @@ const hubot = localFont({
   src: './fonts/HubotSans.woff',
   variable: '--font-hubot',
   weight: '400 900',
-  display: 'swap'
+  display: 'swap',
 })
 
 const siteName = 'contac@priyanshu'
@@ -76,8 +76,9 @@ export default function RootLayout({
     <html lang="en" className={hubot.variable}>
       <body
         className={clsx(
-          "font-sans antialiased selection:bg-violet-600/90 dark:bg-[#1c1917] dark:text-rose-100/90",
-        )}>
+          'font-sans antialiased selection:bg-violet-600/90 dark:bg-[#1c1917] dark:text-rose-100/90',
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
