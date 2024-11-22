@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+# [0.3.3](https://github.com/nsgpriyanshu/nsmail/compare/0.3.2...0.3.3) - (2024-11-22)
+
+## Bug Fixes
+
+- Some minor bugs ([4b8efa8](https://github.com/nsgpriyanshu/nsmail/commit/4b8efa88be257c0885799162adca8a9ad4a91218))
+- Some issue with the z indx ([a15ae91](https://github.com/nsgpriyanshu/nsmail/commit/a15ae917b3f83505323f43705bb8955144ef2504))
+
+## Non Code changes
+
+- 0.3.2 ([6d73cad](https://github.com/nsgpriyanshu/nsmail/commit/6d73cad0685cfde4f73cd9680b7e8ad33d96ec42))
+
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
 # [0.3.2](https://github.com/nsgpriyanshu/nsmail/compare/0.3.1...0.3.2) - (2024-11-15)
 
 ## Bug Fixes
