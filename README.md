@@ -1,26 +1,53 @@
-# nsMail
+# Next.js & NextUI Template
 
-<img src="https://github.com/nsgpriyanshu/nsmail/blob/main/public%2Fpreview.png" alt="preview"/>
+This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
 
-## About
+[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
 
-nsMail is a contact/mail page solution I developed without using any databases. To maintain privacy and security, I utilized Discord to store messages for free. By integrating webhook technology with my website, any feedback or messages sent through the form are automatically stored in my Discord server.
+## Technologies Used
 
-> [!IMPORTANT]
-> This project is designed for personal use. However, you are welcome to use the source code, edit it, and make it your own. Be sure to update the webhook `URL` in your `.env.local` file with your own configuration to ensure it works properly.
+- [Next.js 14](https://nextjs.org/docs/getting-started)
+- [NextUI v2](https://nextui.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind Variants](https://tailwind-variants.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [next-themes](https://github.com/pacocoursey/next-themes)
 
-## Features
+## How to Use
 
-- **Responsive Design**: Adapts seamlessly to various screen sizes and devices.
-- **Sleek UI**: Provides a modern and user-friendly interface.
-- **Dark and Light Modes**: Offers both dark and light theme options to suit user preferences.
+### Use the template with create-next-app
 
-## Technology Used
+To create a new project based on this template using `create-next-app`, run the following command:
 
-- **Next.js**: Utilized with the app router for building the web application.
-- **shadcn/UI**: Used for creating the user interface.
-- **Discord Webhooks**: Employed for message storage and management.
+```bash
+npx create-next-app -e https://github.com/nextui-org/next-app-template
+```
 
-## Acknowledgements
+### Install dependencies
 
-Special thanks to Next.js and shadcn/UI for their tools and resources that facilitated the development of this project.
+You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+
+```bash
+npm install
+```
+
+### Run the development server
+
+```bash
+npm run dev
+```
+
+### Setup pnpm (optional)
+
+If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+
+```bash
+public-hoist-pattern[]=*@nextui-org/*
+```
+
+After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+
+## License
+
+Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
