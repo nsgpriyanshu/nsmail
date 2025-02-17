@@ -1,6 +1,4 @@
-
 # PropEase - Real Estate Management Landing Page
-
 
 <img src="https://github.com/user-attachments/assets/c5463a31-b063-4064-bc4b-0e7e3b4aa73e" alt="Propease Thumbnail">
 
@@ -14,7 +12,7 @@ Check out the live demo of caps.ai here: [Live Preview](https://propease-app.ver
 
 ## 🎥 Watch the Preview Video on YouTube
 
-Take a look at YouTube video by watching the demo: [Watch the Video](https://youtu.be/x3Vh1tOs8j0) 
+Take a look at YouTube video by watching the demo: [Watch the Video](https://youtu.be/x3Vh1tOs8j0)
 
 ## 💻 Tech Stack
 
@@ -30,25 +28,27 @@ Take a look at YouTube video by watching the demo: [Watch the Video](https://you
 ## 🛠️ Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/Shreyas-29/propease.git
-    ```
+
+   ```bash
+   git clone https://github.com/Shreyas-29/propease.git
+   ```
 
 2. Install dependencies:
-    ```bash
-    pnpm install
-    # or
-    yarn install
-    ```
+
+   ```bash
+   pnpm install
+   # or
+   yarn install
+   ```
 
 3. Run the development server:
-    ```bash
-    pnpm run dev
-    # or
-    yarn dev
-    ```
+   ```bash
+   pnpm run dev
+   # or
+   yarn dev
+   ```
 4. Environment Variables
-Rename `.env.example` to `.env`:
+   Rename `.env.example` to `.env`:
 
 ```env
     NEXT_PUBLIC_APP_NAME=PropEase
@@ -63,19 +63,15 @@ Rename `.env.example` to `.env`:
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-
 ## 🚀 Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
-
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 
 ## ☕ Buy Me a Coffee
 

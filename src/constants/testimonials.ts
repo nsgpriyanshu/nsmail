@@ -1,44 +1,16 @@
 export const TESTIMONIALS = [
-    {
-        content: "The AI-powered valuation tool helped me price my properties accurately. Closed deals 30% faster than traditional methods.",
-        author: "Emma",
-        role: "Real Estate Agent",
-        image: "/images/person-one.jpg",
-        rating: 5
-    },
-    {
-        content: "Virtual tours and 3D viewing features saved me countless hours. Made property hunting efficient and enjoyable from anywhere.",
-        author: "James",
-        role: "Property Buyer",
-        image: "/images/person-two.jpg",
-        rating: 5
-    },
-    {
-        content: "Managing multiple properties is now seamless. The automated maintenance tracking and tenant portal are game-changers.",
-        author: "Sofia",
-        role: "Property Manager",
-        image: "/images/person-three.jpg",
-        rating: 5
-    },
-    {
-        content: "The document handling system is brilliant. Digital contracts and secure payments have simplified my rental processes.",
-        author: "Lucas",
-        role: "Property Owner",
-        image: "/images/person-four.jpeg",
-        rating: 5
-    },
-    {
-        content: "Market analytics and trend reports help me make data-driven decisions. Perfect tool for investment planning.",
-        author: "Isabella",
-        role: "Property Investor",
-        image: "/images/person-five.jpeg",
-        rating: 5
-    },
-    {
-        content: "Tenant screening and rental management features are exceptional. Reduced my vacancy rates significantly.",
-        author: "Oliver",
-        role: "Landlord",
-        image: "/images/person-six.jpg",
-        rating: 5
-    }
-]; 
+  {
+    author: 'Aman Sharma',
+    role: '2nd Year CS Student',
+    content: 'These notes saved me so much time before exams. Everything is well-organized!',
+    rating: 5,
+    image: '/avatars/student1.png',
+  },
+  {
+    author: 'Priya Verma',
+    role: 'B.Tech 1st Year',
+    content: 'Loved the concise explanations and diagrams. Made revision easy!',
+    rating: 4,
+    image: '/avatars/student2.png',
+  },
+]

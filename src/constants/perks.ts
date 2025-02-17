@@ -1,28 +1,28 @@
 export interface PerkItem {
-    title: string;
-    description: string;
-    icon: string;
+  title: string
+  description: string
+  icon: string
 }
 
 export const PERKS: PerkItem[] = [
-    {
-        title: "Property Sync",
-        description: "Sync listings across platforms instantly.",
-        icon: "/icons/perk-one.svg"
-    },
-    {
-        title: "Smart Analytics",
-        description: "Track performance with realtime insights.",
-        icon: "/icons/perk-two.svg"
-    },
-    {
-        title: "Doc Manager",
-        description: "Handle documents and esigns easily.",
-        icon: "/icons/perk-three.svg"
-    },
-    {
-        title: "Lead Connect",
-        description: "Manage all property inquiries centrally.",
-        icon: "/icons/perk-four.svg"
-    }
-]; 
+  {
+    title: 'Organized Notes',
+    description: 'Access well-structured notes for all subjects in one place.',
+    icon: '/icons/perk-one.svg',
+  },
+  {
+    title: 'Topic-Wise PDFs',
+    description: 'Download topic-specific PDFs for better understanding.',
+    icon: '/icons/perk-two.svg',
+  },
+  {
+    title: 'Easy Search',
+    description: 'Find notes quickly with an intelligent search system.',
+    icon: '/icons/perk-three.svg',
+  },
+  {
+    title: 'Regular Updates',
+    description: 'Stay up-to-date with newly added materials every semester.',
+    icon: '/icons/perk-four.svg',
+  },
+]

@@ -1,67 +1,67 @@
 export type PlanFeature = {
-    text: string;
-    included: boolean;
-};
+  text: string
+  included: boolean
+}
 
 export type Plan = {
-    name: string;
-    description: string;
-    price: {
-        monthly: number;
-        yearly: number;
-    };
-    features: PlanFeature[];
-    popular?: boolean;
-};
+  name: string
+  description: string
+  price: {
+    monthly: number
+    yearly: number
+  }
+  features: PlanFeature[]
+  popular?: boolean
+}
 
 export const PRICING_PLANS: Plan[] = [
-    {
-        name: "Basic",
-        description: "Perfect for individual agents",
-        price: {
-            monthly: 29,
-            yearly: 290,
-        },
-        features: [
-            { text: "Property Listings (up to 20)", included: true },
-            { text: "Basic Analytics", included: true },
-            { text: "Lead Management", included: true },
-            { text: "Email Support", included: true },
-            { text: "Virtual Tours", included: false },
-            { text: "Advanced Analytics", included: false },
-        ],
+  {
+    name: 'Basic',
+    description: 'For students who need essential notes',
+    price: {
+      monthly: 199,
+      yearly: 1990,
     },
-    {
-        name: "Professional",
-        description: "Ideal for growing agencies",
-        price: {
-            monthly: 79,
-            yearly: 790,
-        },
-        popular: true,
-        features: [
-            { text: "Unlimited Property Listings", included: true },
-            { text: "Advanced Analytics", included: true },
-            { text: "Lead Management", included: true },
-            { text: "Priority Support", included: true },
-            { text: "Virtual Tours", included: true },
-            { text: "Marketing Tools", included: true },
-        ],
+    features: [
+      { text: 'Access to Semester Notes', included: true },
+      { text: 'Download PDFs', included: true },
+      { text: 'Limited Cloud Storage (2GB)', included: true },
+      { text: 'Email Support', included: true },
+      { text: 'Offline Access', included: false },
+      { text: 'Priority Updates', included: false },
+    ],
+  },
+  {
+    name: 'Pro',
+    description: 'Best for students who want more resources',
+    price: {
+      monthly: 399,
+      yearly: 3990,
     },
-    {
-        name: "Enterprise",
-        description: "For large real estate firms",
-        price: {
-            monthly: 199,
-            yearly: 1990,
-        },
-        features: [
-            { text: "Unlimited Property Listings", included: true },
-            { text: "Custom Analytics", included: true },
-            { text: "Team Management", included: true },
-            { text: "24/7 Support", included: true },
-            { text: "API Access", included: true },
-            { text: "White Labeling", included: true },
-        ],
+    popular: true,
+    features: [
+      { text: 'Access to All Notes & Resources', included: true },
+      { text: 'Download PDFs & PPTs', included: true },
+      { text: 'Extended Cloud Storage (10GB)', included: true },
+      { text: 'Offline Access', included: true },
+      { text: 'Priority Updates', included: true },
+      { text: 'Live Q&A Support', included: false },
+    ],
+  },
+  {
+    name: 'Premium',
+    description: 'For serious learners & researchers',
+    price: {
+      monthly: 699,
+      yearly: 6990,
     },
-];
+    features: [
+      { text: 'Unlimited Access to All Notes', included: true },
+      { text: 'Download Exclusive Materials', included: true },
+      { text: 'Premium Cloud Storage (50GB)', included: true },
+      { text: 'Offline Access', included: true },
+      { text: 'Priority Updates', included: true },
+      { text: 'Live Q&A & 24/7 Support', included: true },
+    ],
+  },
+]
