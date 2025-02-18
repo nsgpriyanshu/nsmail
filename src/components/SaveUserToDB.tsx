@@ -7,21 +7,31 @@ import { supabase } from '@/lib/supabase'
 const SaveUserToDB = () => {
   const { user } = useUser()
 
+  console.log('User data:', user)
+
   useEffect(() => {
-    if (!user) return
+    if (!user) return // Do nothing if the user is not authenticated
 
     const saveUser = async () => {
-      const { error } = await supabase
-        .from('users')
-        .upsert([{ clerk_id: user.id }], { onConflict: 'clerk_id' }) // ✅ FIXED
+      const { error } = await supabase.from('users').upsert(
+        [
+          {
+            clerk_id: user.id,
+            email: user.primaryEmailAddress?.emailAddress,
+          },
+        ],
+        { onConflict: 'clerk_id' },
+      )
 
-      if (error) console.error('Error saving user:', error)
+      if (error) {
+        console.error('Error saving user:', error.message || error.details || error)
+      }
     }
 
-    saveUser()
+    saveUser() // Save user data when component mounts
   }, [user])
 
-  return null
+  return null // No UI needed
 }
 
 export default SaveUserToDB
