@@ -1,26 +1,11 @@
-import SignOut from '@/components/signout'
-import { Button } from '@/components/ui/button'
-import { currentUser } from '@clerk/nextjs/server'
-import Link from 'next/link'
+import React from 'react'
 
-const AnnouncementPage = async () => {
-  const user = await currentUser()
-
+function Announcements() {
   return (
-    <div className="flex h-screen flex-col items-center justify-center">
-      <div className="flex flex-col items-center justify-center gap-6">
-        <h1 className="text-center text-lg font-medium">
-          Welcome to the Announcement, {user?.fullName}
-        </h1>
-        <div className="flex items-center justify-center gap-4">
-          <Link href="/">
-            <Button variant="outline">Home</Button>
-          </Link>
-          <SignOut />
-        </div>
-      </div>
+    <div>
+      <h1>Announcements</h1>
     </div>
   )
 }
 
-export default AnnouncementPage
+export default Announcements
