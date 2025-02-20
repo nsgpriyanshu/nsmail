@@ -1,169 +1,202 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import * as z from 'zod'
-import { useState } from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-
+import { Lock, Shield, ChevronRight, Trash2, Camera } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { useAuth, useUser } from '@clerk/nextjs'
 import { toast } from 'sonner'
+import { useState, useEffect } from 'react'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog'
 
-const profileFormSchema = z.object({
-  username: z
-    .string()
-    .min(2, 'Username must be at least 2 characters.')
-    .regex(/^[a-z0-9_-]+$/, 'Username can only contain lowercase letters, numbers, _, and -'),
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Invalid email address.'),
-})
-
-function ProfileForm() {
+function AccountProfile() {
   const { signOut } = useAuth()
   const { user } = useUser()
-  const router = useRouter()
-
-  const form = useForm<z.infer<typeof profileFormSchema>>({
-    resolver: zodResolver(profileFormSchema),
-    defaultValues: {
-      username: user?.username || '',
-      name: user?.fullName || '',
-      email: user?.primaryEmailAddress?.emailAddress || '',
-    },
-  })
-
-  const [image, setImage] = useState(user?.imageUrl || '/placeholder-avatar.jpg')
   const [isDeleting, setIsDeleting] = useState(false)
+  const [firstName, setFirstName] = useState(user?.firstName || '')
+  const [lastName, setLastName] = useState(user?.lastName || '')
+  const [username, setUsername] = useState(user?.username || '')
+  const [profileImage, setProfileImage] = useState(user?.imageUrl || '/default-avatar.png')
+  const [isUploading, setIsUploading] = useState(false)
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
 
-  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = () => setImage(reader.result as string)
-      reader.readAsDataURL(file)
+  useEffect(() => {
+    if (user?.imageUrl) {
+      setProfileImage(user.imageUrl)
+    }
+  }, [user?.imageUrl])
+
+  const handleSaveChanges = async () => {
+    try {
+      await user?.update({ firstName, lastName, username })
+      toast('Profile updated successfully')
+    } catch (error) {
+      toast.error('Failed to update profile')
     }
   }
 
-  const onSubmit = (data: z.infer<typeof profileFormSchema>) => {
-    toast.success('Profile updated successfully')
+  const handleDeleteAccount = async () => {
+    setIsDeleting(true)
+    try {
+      await user?.delete()
+      toast('Account deleted successfully')
+      signOut()
+    } catch (error) {
+      toast.error('Failed to delete account')
+    } finally {
+      setIsDeleting(false)
+      setIsDeleteDialogOpen(false)
+    }
   }
 
-  const handleDeleteAccount = () => {
-    if (confirm('Are you sure? This action cannot be undone!')) {
-      setIsDeleting(true)
-      setTimeout(() => {
-        toast('Account got deleted')
-        router.push('/signin')
-      }, 2000)
+  const handleProfileImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (!file) return
+
+    setIsUploading(true)
+    try {
+      // Upload image to Clerk
+      await user?.setProfileImage({ file })
+
+      // Refresh user data to reflect the updated image
+      await user?.reload()
+
+      toast('Profile picture updated successfully')
+    } catch (error) {
+      toast.error('Failed to update profile picture')
+    } finally {
+      setIsUploading(false)
     }
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto max-w-lg space-y-6 p-6">
-        {/* Profile Picture Upload */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Profile Picture</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col items-center">
-            <Avatar className="h-24 w-24 cursor-pointer">
-              <AvatarImage src={image} alt="Profile picture" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <input type="file" accept="image/*" className="mt-4" onChange={handleImageUpload} />
-          </CardContent>
-        </Card>
-
-        {/* Account Info */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Account Information</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Username</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+    <div className="mx-auto flex w-full max-w-4xl flex-col items-center space-y-6 p-4 sm:p-6 md:p-8">
+      <div className="text-center">
+        <h3 className="text-lg font-medium">Account</h3>
+        <p className="text-sm text-muted-foreground">
+          Manage your account settings and update your profile.
+        </p>
+      </div>
+      <Separator />
+      <Card className="w-full bg-background">
+        <CardHeader>
+          <CardTitle>Personal Information</CardTitle>
+          <CardDescription>Update your personal details.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Profile Picture Section */}
+          <div className="flex flex-col items-center space-y-2">
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="h-24 w-24 rounded-full object-cover sm:h-28 sm:w-28"
             />
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleProfileImageChange}
+              className="hidden"
+              id="profile-image-upload"
             />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input {...field} disabled />
-                  </FormControl>
-                </FormItem>
-              )}
+            <label
+              htmlFor="profile-image-upload"
+              className="flex cursor-pointer items-center space-x-2 text-blue-500"
+            >
+              <Camera className="h-5 w-5" />
+              <span>{isUploading ? 'Uploading...' : 'Change Profile Photo'}</span>
+            </label>
+          </div>
+          {/* User Information */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="first-name">First Name</Label>
+              <Input
+                id="first-name"
+                placeholder="Enter your first name"
+                defaultValue={user?.firstName || ''}
+                onChange={e => setFirstName(e.target.value)}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="last-name">Last Name</Label>
+              <Input
+                id="last-name"
+                placeholder="Enter your last name"
+                defaultValue={user?.lastName || ''}
+                onChange={e => setLastName(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="username">Username</Label>
+            <Input
+              id="username"
+              placeholder="Enter your username"
+              defaultValue={user?.username || ''}
+              onChange={e => setUsername(e.target.value)}
             />
-          </CardContent>
-          <CardFooter className="flex justify-end">
-            <Button type="submit">Save Changes</Button>
-          </CardFooter>
-        </Card>
-
-        {/* Danger Zone */}
-        <Card className="border-red-500">
-          <CardHeader>
-            <CardTitle className="text-red-500">Danger Zone</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Separator className="my-4" />
-            <div className="flex flex-col space-y-2 text-center">
-              <p className="text-sm text-muted-foreground">
-                Deleting your account is permanent and cannot be undone.
-              </p>
-              <Button variant="destructive" onClick={handleDeleteAccount} disabled={isDeleting}>
+          </div>
+          <div className="space-y-2">
+            <Label>Email</Label>
+            <Input
+              id="email"
+              type="email"
+              defaultValue={user?.primaryEmailAddress?.emailAddress || ''}
+              disabled
+            />
+          </div>
+        </CardContent>
+        <CardFooter className="flex flex-col space-y-3 sm:flex-row sm:justify-between sm:space-y-0">
+          <Button onClick={handleSaveChanges} className="w-full sm:w-auto">
+            Save Changes
+          </Button>
+          <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+            <AlertDialogTrigger asChild>
+              <Button variant="destructive" className="w-full sm:w-auto">
                 {isDeleting ? 'Deleting...' : 'Delete Account'}
               </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Logout Button */}
-        <Button variant="secondary" className="w-full" onClick={() => signOut()}>
-          Logout
-        </Button>
-      </form>
-    </Form>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                <AlertDialogDescription>
+                  This action cannot be undone. Your account will be permanently deleted.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={handleDeleteAccount}
+                  className="bg-red-600 hover:bg-red-700"
+                >
+                  Delete
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </CardFooter>
+      </Card>
+    </div>
   )
 }
 
-export default ProfileForm
+export default AccountProfile
