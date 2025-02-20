@@ -1,7 +1,7 @@
 'use client'
 
 import { useUser } from '@clerk/nextjs' // Import Clerk user hook
-import { LogOut, Settings } from 'lucide-react'
+import { CircleUserIcon, LogOut } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
 
@@ -34,8 +34,8 @@ export function NavUser() {
       <SidebarMenuItem>
         <SidebarMenuButton asChild>
           <a href="/dashboard/profile">
-            <Settings className="mr-2 h-4 w-4" />
-            Settings
+            <CircleUserIcon className="mr-2 h-4 w-4" />
+            Profile
           </a>
         </SidebarMenuButton>
       </SidebarMenuItem>

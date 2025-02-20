@@ -1,6 +1,6 @@
 'use client'
 
-import { Lock, Shield, ChevronRight, Trash2, Camera } from 'lucide-react'
+import { Camera } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Card,

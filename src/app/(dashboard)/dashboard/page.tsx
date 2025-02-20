@@ -1,24 +1,21 @@
-import SignOut from '@/components/signout'
-import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 import { currentUser } from '@clerk/nextjs/server'
-import Link from 'next/link'
+import AnimationContainer from '@/components/global/animation-container'
 
 const DashboardPage = async () => {
   const user = await currentUser()
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center">
-      <div className="flex flex-col items-center justify-center gap-6">
-        <h1 className="text-center text-lg font-medium">
-          Welcome to the dashboard, {user?.fullName}
-        </h1>
-        <div className="flex items-center justify-center gap-4">
-          <Link href="/">
-            <Button variant="outline">Home</Button>
-          </Link>
-          <SignOut />
+    <div className="mx-auto flex w-full max-w-6xl flex-col items-center space-y-8 p-6 sm:p-8 md:p-10 lg:p-12">
+      <AnimationContainer animation="fadeUp" delay={0.2}>
+        <div className="text-center">
+          <h3 className="text-lg font-medium">Welcome</h3>
+          <p className="text-sm text-muted-foreground">
+            Let's start your academic journey with NotEase
+          </p>
         </div>
-      </div>
+      </AnimationContainer>
+      <Separator />
     </div>
   )
 }
