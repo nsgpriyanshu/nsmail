@@ -8,6 +8,7 @@ import {
   HouseIcon,
   LanguagesIcon,
   MailboxIcon,
+  NotebookIcon,
   PiIcon,
   TerminalIcon,
 } from 'lucide-react'
@@ -41,7 +42,7 @@ const data = {
   navMain: [
     {
       title: 'Lobby',
-      url: '/',
+      url: '/dashboard',
       icon: HouseIcon,
       isActive: true,
     },
@@ -49,6 +50,12 @@ const data = {
       title: 'Announcements',
       url: '/dashboard/announcements',
       icon: BellDotIcon,
+      isActive: true,
+    },
+    {
+      title: 'Notes',
+      url: '/dashboard/notes',
+      icon: NotebookIcon,
       isActive: true,
     },
     {

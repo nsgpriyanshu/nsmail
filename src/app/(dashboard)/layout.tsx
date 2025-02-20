@@ -1,6 +1,7 @@
 import { Sidebar, SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/dashboard-sidebar/app-sidebar'
 import React from 'react'
+import { Breadcrumbs } from '@/components/dashboard-sidebar/breadcrumbs'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +10,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <AppSidebar />
         <SidebarInset>
           <main className="font-base min-h-screen w-full flex-1 overflow-x-hidden bg-[#101010] text-foreground antialiased">
-            <SidebarTrigger />
+            <div className="flex items-center gap-2">
+              <SidebarTrigger />
+              <Breadcrumbs />
+            </div>
             {children}
           </main>
         </SidebarInset>

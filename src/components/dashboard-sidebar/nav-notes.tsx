@@ -1,6 +1,6 @@
 'use client'
 
-import { Folder, Forward, MoreHorizontal, Trash2, type LucideIcon } from 'lucide-react'
+import { Folder, Forward, Trash2, type LucideIcon } from 'lucide-react'
 
 import {
   DropdownMenu,
@@ -13,7 +13,6 @@ import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
@@ -43,12 +42,7 @@ export function NavNotes({
               </a>
             </SidebarMenuButton>
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <SidebarMenuAction showOnHover>
-                  <MoreHorizontal />
-                  <span className="sr-only">More</span>
-                </SidebarMenuAction>
-              </DropdownMenuTrigger>
+              <DropdownMenuTrigger asChild></DropdownMenuTrigger>
               <DropdownMenuContent
                 className="w-48 rounded-lg"
                 side={isMobile ? 'bottom' : 'right'}
