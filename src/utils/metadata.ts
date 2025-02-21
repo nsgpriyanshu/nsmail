@@ -2,18 +2,18 @@ import { Metadata } from 'next'
 
 export const generateMetadata = ({
   title = `${process.env.NEXT_PUBLIC_APP_NAME} | Home`,
-  description = `Manage your real estate properties with ease.`,
+  description = `Simplify Your Studies with Quality Notes`,
   image = '/thumbnail.png',
   icons = [
     {
       rel: 'apple-touch-icon',
       sizes: '32x32',
-      url: '/icons/icon.svg',
+      url: '/icons/logo.png',
     },
     {
       rel: 'icon',
       sizes: '32x32',
-      url: '/icons/icon.svg',
+      url: '/icons/logo.png',
     },
   ],
   noIndex = false,

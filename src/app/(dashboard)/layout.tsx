@@ -1,7 +1,7 @@
 import { Sidebar, SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
-import { AppSidebar } from '@/components/dashboard-sidebar/app-sidebar'
+import { AppSidebar } from '@/components/dashboard/app-sidebar'
 import React from 'react'
-import { Breadcrumbs } from '@/components/dashboard-sidebar/breadcrumbs'
+import { Breadcrumbs } from '@/components/dashboard/breadcrumbs'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

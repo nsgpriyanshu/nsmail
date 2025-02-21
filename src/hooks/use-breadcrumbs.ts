@@ -15,16 +15,16 @@ const routeMapping: Record<string, BreadcrumbItem[]> = {
     { title: 'Lobby', link: '' },
   ],
   '/dashboard/announcements': [
-    { title: 'Dashboard', link: '/' },
+    { title: 'Dashboard', link: '/dashboard' },
     { title: 'Announcements', link: '/dashboard/announcements' },
   ],
   '/dashboard/notes': [
-    { title: 'Dashboard', link: '/' },
+    { title: 'Dashboard', link: '/dashboard' },
     { title: 'Notes', link: '/dashboard/notes' },
   ],
-  '/dashboard/newsletter': [
-    { title: 'Dashboard', link: '/' },
-    { title: 'Newsletter', link: '/dashboard/newsletter' },
+  '/dashboard/exclusive': [
+    { title: 'Dashboard', link: '/dashboard' },
+    { title: 'Exclusive', link: '/dashboard/exclusive' },
   ],
   '/dashboard/notes/sub1': [
     { title: 'Dashboard', link: '/' },

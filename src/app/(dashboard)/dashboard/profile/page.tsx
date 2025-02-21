@@ -27,6 +27,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog'
+import AnimationContainer from '@/components/global/animation-container'
 
 function AccountProfile() {
   const { signOut } = useAuth()
@@ -90,14 +91,16 @@ function AccountProfile() {
 
   return (
     <div className="mx-auto flex w-full max-w-4xl flex-col items-center space-y-6 p-4 sm:p-6 md:p-8">
-      <div className="text-center">
-        <h3 className="text-lg font-medium">Account</h3>
-        <p className="text-sm text-muted-foreground">
-          Manage your account settings and update your profile.
-        </p>
-      </div>
+      <AnimationContainer animation="fadeUp" delay={0.2}>
+        <div className="text-center">
+          <h3 className="txet-2xl font-medium md:text-3xl lg:text-4xl">Account</h3>
+          <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
+            Manage your account settings and update your profile.
+          </p>
+        </div>
+      </AnimationContainer>
       <Separator />
-      <Card className="w-full bg-background">
+      <Card className="w-full bg-[#191919]">
         <CardHeader>
           <CardTitle>Personal Information</CardTitle>
           <CardDescription>Update your personal details.</CardDescription>
