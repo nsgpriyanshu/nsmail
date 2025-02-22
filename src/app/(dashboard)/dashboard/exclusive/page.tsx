@@ -1,8 +1,7 @@
 import AnimationContainer from '@/components/global/animation-container'
 import { Separator } from '@/components/ui/separator'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Crown, Lock, Star } from 'lucide-react'
 import React from 'react'
+import Image from 'next/image'
 
 function Exclusive() {
   return (
@@ -18,13 +17,13 @@ function Exclusive() {
       <Separator />
       <AnimationContainer animation="fadeUp" delay={0.4}>
         <div className="flex justify-center">
-          <img src="/images/NotEase_Exclusive.svg" alt="Notes Visual" className="w-md h-auto" />
+          <Image src="/images/NotEase_Exclusive.svg" width={850} height={850} alt="Notes Visual" />
         </div>
       </AnimationContainer>
       {/* Exclusive Features List */}
       <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
         <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-          Comming Soon, Under construction ...
+          Comming Soon, Under development ...
         </p>
       </div>
     </div>

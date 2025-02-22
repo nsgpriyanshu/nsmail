@@ -1,6 +1,7 @@
 import AnimationContainer from '@/components/global/animation-container'
 import { Separator } from '@/components/ui/separator'
 import React from 'react'
+import Image from 'next/image'
 
 function Note() {
   return (
@@ -18,7 +19,7 @@ function Note() {
       <Separator />
       <AnimationContainer animation="fadeUp" delay={0.4}>
         <div className="flex justify-center">
-          <img src="/images/NotEase_Notes.svg" alt="Notes Visual" className="w-md h-auto" />
+          <Image src="/images/NotEase_Notes.svg" width={700} height={700} alt="Notes Visual" />
         </div>
       </AnimationContainer>
     </div>

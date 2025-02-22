@@ -25,12 +25,11 @@ import {
 } from '@/components/ui/sidebar'
 import { NavMain } from './nav-main'
 
-// Sample data without sub-items
 const data = {
   user: {
-    name: 'shadcn',
+    name: 'user',
     email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
+    avatar: '/avatars/profile.jpg',
   },
   teams: [
     {

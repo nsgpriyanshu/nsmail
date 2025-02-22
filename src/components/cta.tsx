@@ -87,7 +87,7 @@ const CTA = () => {
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={1}>
-            <Link href="/notes">
+            <Link href="/signup">
               <Button size="lg" className="mt-6">
                 Explore Notes
                 <ArrowRightIcon className="ml-2 size-4" />

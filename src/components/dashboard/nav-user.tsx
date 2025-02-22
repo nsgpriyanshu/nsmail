@@ -1,6 +1,6 @@
 'use client'
 
-import { useUser } from '@clerk/nextjs' // Import Clerk user hook
+import { useUser } from '@clerk/nextjs'
 import { CircleUserIcon, LogOut } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar'
@@ -41,7 +41,7 @@ export function NavUser() {
       </SidebarMenuItem>
       <SidebarMenuItem>
         <SidebarMenuButton asChild>
-          <a href="/sign-out">
+          <a href="/sigin">
             <LogOut className="mr-2 h-4 w-4" />
             Logout
           </a>

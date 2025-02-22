@@ -3,23 +3,15 @@ import { Separator } from '@/components/ui/separator'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { CalendarClock } from 'lucide-react'
 import React from 'react'
+import Image from 'next/image'
 
 function Announcements() {
   const announcements = [
     {
-      title: 'New Notes Uploaded',
-      content: 'Python Basics and Mathematics notes are now available.',
-      date: 'February 19, 2025',
-    },
-    {
-      title: 'Upcoming Exam Alert',
-      content: 'Mid-term exams are scheduled for next month. Stay prepared!',
-      date: 'February 15, 2025',
-    },
-    {
-      title: 'Website Update',
-      content: 'Dark mode and new UI enhancements have been added.',
-      date: 'February 10, 2025',
+      title: 'Get Started with NotEase',
+      content:
+        'Huge congratulations to everyone for successfully completing your first semester! You worked hard, and you did it! You can find these resources right here! We hope they help you have a fantastic second semester. Keep up the great work!',
+      date: 'February 23, 2025',
     },
   ]
 
@@ -37,7 +29,12 @@ function Announcements() {
       <Separator />
       <AnimationContainer animation="fadeUp" delay={0.4}>
         <div className="flex justify-center">
-          <img src="/images/NotEase_Announcements.svg" alt="Notes Visual" className="w-sm h-auto" />
+          <Image
+            src="/images/NotEase_Announcements.svg"
+            width={500}
+            height={500}
+            alt="Notes Visual"
+          />
         </div>
       </AnimationContainer>
       {/* Announcements List */}

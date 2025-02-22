@@ -1,6 +1,6 @@
 {
   "name": "notease",
-  "description": "NoteEase - A modern note-sharing platform for students.",
+  "description": "NoteEase - A modern note-management platform for students.",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -79,7 +79,9 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@commitlint/config-angular": "^19.7.1",
     "@eslint/eslintrc": "^3",
+    "@favware/cliff-jumper": "^6.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

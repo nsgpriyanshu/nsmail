@@ -1,19 +1,19 @@
 export const METRICS = [
   {
-    number: 5000,
+    number: 0,
     label: 'Notes Available',
     image: '/icons/metric-one.svg',
     reverse: false,
   },
   {
-    number: 100,
+    number: 0,
     suffix: 'K+',
     label: 'Downloads Completed',
     image: '/icons/metric-two.svg',
     reverse: true,
   },
   {
-    number: 95,
+    number: 0,
     suffix: '%',
     label: 'Student Satisfaction',
     image: '/icons/metric-three.svg',

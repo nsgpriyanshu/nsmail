@@ -5,7 +5,7 @@ import AnimationContainer from './global/animation-container'
 import Wrapper from './global/wrapper'
 import Icons from './global/icons'
 
-const PRODUCT_LINKS = [{ label: 'Note Search', href: '#' }]
+const PRODUCT_LINKS = [{ label: 'Notes', href: 'dashboard/notes' }]
 
 const RESOURCES_LINKS = [
   { label: 'DSA & Algorithms', href: 'https://www.geeksforgeeks.org/data-structures/' },

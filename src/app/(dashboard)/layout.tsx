@@ -1,9 +1,25 @@
-import { Sidebar, SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+'use client'
+
+import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/dashboard/app-sidebar'
-import React from 'react'
 import { Breadcrumbs } from '@/components/dashboard/breadcrumbs'
+import { Metadata } from 'next'
+import { useAuth, RedirectToSignIn } from '@clerk/nextjs'
+import React from 'react'
+
+// export const metadata: Metadata = {
+//   title: `${process.env.NEXT_PUBLIC_APP_NAME} | Dashboard`,
+//   description: 'Access and manage all your study materials in one place. Upload, download, and organize your notes effortlessly with NotEase.'
+// }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const { isSignedIn } = useAuth()
+
+  // Redirect unauthenticated users to sign-in page
+  if (!isSignedIn) {
+    return <RedirectToSignIn />
+  }
+
   return (
     <SidebarProvider>
       <div className="flex h-screen w-full">
