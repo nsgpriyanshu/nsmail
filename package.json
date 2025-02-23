@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start",
     "format:check": "npx prettier --check .",
     "format:fix": "npx prettier --write .",
-    "start": "next start",
     "final:start": "npm run build && npm run start",
     "execute": "npm run format:check && npm run build && npm run start",
     "lint": "next lint",

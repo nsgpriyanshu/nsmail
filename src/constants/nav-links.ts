@@ -1,11 +1,11 @@
 export const NAV_LINKS = [
   {
     name: 'Features',
-    link: '#',
+    link: '/',
   },
   {
     name: 'Pricing',
-    link: '/#pricing',
+    link: '/',
   },
   {
     name: 'Contact',

@@ -5,11 +5,11 @@ export async function GET() {
 User-agent: *
 Disallow: /dashboard
 Disallow: /dashboard/*
-Disallow: /profile
-Disallow: /announcements
-Disallow: /exclusive
-Disallow: /notes
-Disallow: /notes/*
+Disallow: /dashboard/profile
+Disallow: /dashboard/announcements
+Disallow: /dashboard/exclusive
+Disallow: /dashboard/notes
+Disallow: /dashboard/notes/*
 Sitemap: https://notease-ps.vercel.app/sitemap.xml
 `
 

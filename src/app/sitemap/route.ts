@@ -1,15 +1,9 @@
 import { NextResponse } from 'next/server'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourwebsite.com'
+const SITE_URL = 'https://notease-ps.vercel.app/'
 
 export async function GET() {
-  const staticPages = [
-    '', // Homepage
-    'signin',
-    'signup',
-    'pricing',
-    'testimonials',
-  ]
+  const staticPages = ['', 'signin', 'signup', 'pricing', 'testimonials']
 
   const sitemapEntries = staticPages
     .map(page => `<url><loc>${SITE_URL}/${page}</loc></url>`)
