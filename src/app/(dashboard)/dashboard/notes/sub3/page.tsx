@@ -14,8 +14,8 @@ function Sub3() {
     fetch('/notes/notes.json')
       .then(res => res.json())
       .then(data => {
-        const englishNotes = data.filter((note: Note) => note.sub === 'English')
-        setNotes(englishNotes.sort((a: { id: number }, b: { id: number }) => a.id - b.id))
+        const mechanicsNotes = data.filter((note: Note) => note.sub === 'Engineering Mechanics')
+        setNotes(mechanicsNotes.sort((a: { id: number }, b: { id: number }) => a.id - b.id))
       })
       .catch(err => console.error('Error fetching notes:', err))
   }, [])
@@ -24,10 +24,13 @@ function Sub3() {
     <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center space-y-8 p-6 sm:p-8 md:p-10 lg:p-12">
       <AnimationContainer animation="fadeUp" delay={0.2}>
         <div className="text-center">
-          <h3 className="text-2xl font-semibold md:text-3xl lg:text-4xl">English Notes</h3>
+          <h3 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
+            Engineering Mechanics Notes
+          </h3>
           <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-            Improve your language skills with our English notes. Explore grammar, literature, and
-            communication strategies to excel in both academic and professional settings.
+            Master the fundamentals of engineering mechanics with these structured notes. Learn
+            about forces, equilibrium, motion, and other key principles crucial for engineering
+            success.
           </p>
         </div>
       </AnimationContainer>
@@ -58,7 +61,9 @@ function Sub3() {
             </AnimationContainer>
           ))
         ) : (
-          <p className="text-center text-muted-foreground">No English notes available yet.</p>
+          <p className="text-center text-muted-foreground">
+            No Engineering Mechanics notes available yet.
+          </p>
         )}
       </div>
     </div>
@@ -66,3 +71,4 @@ function Sub3() {
 }
 
 export default Sub3
+
