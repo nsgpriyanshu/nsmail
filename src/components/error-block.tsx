@@ -16,7 +16,7 @@ const BoxWithEdges = ({ position }: { position: [number, number, number] }) => {
       <mesh>
         <boxGeometry args={[0.5, 0.5, 0.5]} />
         <meshPhysicalMaterial
-          color="#000000" // Darker, less vibrant blue
+          color="#0a2e63" // Darker, less vibrant blue
           roughness={0.1}
           metalness={0.8}
           transparent={true}
@@ -27,8 +27,109 @@ const BoxWithEdges = ({ position }: { position: [number, number, number] }) => {
       </mesh>
       <lineSegments>
         <edgesGeometry args={[new THREE.BoxGeometry(0.5, 0.5, 0.5)]} />
-        <lineBasicMaterial color="#000000" linewidth={2} /> // Darker line edges
+        <lineBasicMaterial color="#153b7a" linewidth={2} /> // Darker line edges
       </lineSegments>
+    </group>
+  )
+}
+
+interface BoxLetterProps {
+  letter: 'N' | 'E' | 'X' | 'T'
+  position: [number, number, number]
+}
+
+const BoxLetter = ({ letter, position }: BoxLetterProps) => {
+  const group = useRef<THREE.Group>(null)
+
+  const getLetterShape = (letter: 'N' | 'E' | 'X' | 'T'): number[][] => {
+    const shapes: { [key: string]: number[][] } = {
+      N: [
+        [1, 0, 0, 0, 1],
+        [1, 1, 0, 0, 1],
+        [1, 0, 1, 0, 1],
+        [1, 0, 0, 1, 1],
+        [1, 0, 0, 0, 1],
+      ],
+      E: [
+        [1, 1, 1],
+        [1, 0, 0],
+        [1, 1, 0],
+        [1, 0, 0],
+        [1, 1, 1],
+      ],
+      X: [
+        [1, 0, 0, 0, 1],
+        [0, 1, 0, 1, 0],
+        [0, 0, 1, 0, 0],
+        [0, 1, 0, 1, 0],
+        [1, 0, 0, 0, 1],
+      ],
+      T: [
+        [1, 1, 1],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+        [0, 1, 0],
+      ],
+    }
+    return shapes[letter] || shapes['N']
+  }
+
+  const letterShape = getLetterShape(letter)
+
+  return (
+    <group ref={group} position={position}>
+      {letterShape.map((row, i) =>
+        row.map((cell, j) => {
+          if (cell) {
+            let xOffset =
+              j * 0.5 -
+              (letter === 'T'
+                ? 1
+                : letter === 'E'
+                  ? 0.5
+                  : letter === 'X' || letter === 'N'
+                    ? 1
+                    : 0.75)
+
+            if (letter === 'N') {
+              if (j === 0) {
+                xOffset = -0.5
+              } else if (j === 1) {
+                xOffset = 0
+              } else if (j === 2) {
+                xOffset = 0.25
+              } else if (j === 3) {
+                xOffset = 0.5
+              } else if (j === 4) {
+                xOffset = 1
+              }
+            }
+
+            if (letter === 'X') {
+              if (j === 0) {
+                xOffset = -1
+              } else if (j === 1) {
+                xOffset = -0.75
+              } else if (j === 2) {
+                xOffset = -0.25
+              } else if (j === 3) {
+                xOffset = 0.25
+              } else if (j === 4) {
+                xOffset = 0.5
+              }
+            }
+
+            return (
+              <BoxWithEdges
+                key={`<span class="math-inline">\{i\}\-</span>{j}`}
+                position={[xOffset, (4 - i) * 0.5 - 1, 0]}
+              />
+            )
+          }
+          return null
+        }),
+      )}
     </group>
   )
 }
@@ -69,7 +170,12 @@ const BoxNumber = ({ number, position }: BoxNumberProps) => {
         row.map((cell, j) => {
           if (cell) {
             const xOffset = j * 0.5 - (numberShape[0].length - 1) * 0.25
-            return <BoxWithEdges key={`${i}-${j}`} position={[xOffset, (4 - i) * 0.5 - 1, 0]} />
+            return (
+              <BoxWithEdges
+                key={`<span class="math-inline">\{i\}\-</span>{j}`}
+                position={[xOffset, (4 - i) * 0.5 - 1, 0]}
+              />
+            )
           }
           return null
         }),
@@ -79,7 +185,7 @@ const BoxNumber = ({ number, position }: BoxNumberProps) => {
 }
 
 const Scene = () => {
-  const orbitControlsRef = useRef(null)
+  const orbitControlsRef = useRef(null) // Let TypeScript infer the type
   const [isMobileDevice, setIsMobileDevice] = useState(false)
 
   useEffect(() => {
@@ -115,26 +221,5 @@ const Scene = () => {
         background
       />
     </>
-  )
-}
-export default function NotFound() {
-  return (
-    <div className="relative h-screen w-full bg-background">
-      <Canvas camera={{ position: [10, 0, -11], fov: 50 }}>
-        <Scene />
-      </Canvas>
-      <div className="absolute bottom-8 left-0 right-0 text-center">
-        <h1 className="mb-4 text-4xl font-bold text-neutral-900">Page Not Found</h1>
-        <p className="mb-6 text-neutral-900">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <a
-          href="/"
-          className="inline-flex items-center justify-center rounded-md border border-transparent bg-background px-6 py-3 text-base font-medium text-primary transition-colors duration-150"
-        >
-          Return Home
-        </a>
-      </div>
-    </div>
   )
 }
