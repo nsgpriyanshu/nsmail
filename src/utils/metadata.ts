@@ -29,3 +29,4 @@ export const generateMetadata = ({
   icons,
   ...(noIndex && { robots: { index: false, follow: false } }),
 })
+

@@ -127,7 +127,7 @@ const Navbar = () => {
           <div className="flex w-full items-center justify-between gap-x-4">
             <AnimationContainer animation="fadeRight" delay={0.1}>
               <Link href="/">
-                <Icons.icon className="h-6 w-max" />
+              <Icons.logo className="-mt-1 h-7 w-max" />
               </Link>
             </AnimationContainer>
 
@@ -167,7 +167,7 @@ const Navbar = () => {
                   <Link
                     href={navItem.link}
                     onClick={() => setOpen(false)}
-                    className="relative w-full rounded-lg px-4 py-2 text-neutral-300 hover:bg-neutral-800"
+                    className="gap-y-2 relative w-full rounded-lg px-4 py-2 text-neutral-300 hover:bg-neutral-800"
                   >
                     <motion.span>{navItem.name}</motion.span>
                   </Link>
@@ -179,7 +179,7 @@ const Navbar = () => {
                     <Button
                       onClick={() => setOpen(false)}
                       variant="default"
-                      className="block w-full md:hidden"
+                      className="block w-full md:hidden mt-2"
                     >
                       Dashboard
                     </Button>
@@ -190,7 +190,7 @@ const Navbar = () => {
                       <Button
                         onClick={() => setOpen(false)}
                         variant="secondary"
-                        className="block w-full md:hidden"
+                        className="mb-2 block w-full md:hidden"
                       >
                         Login
                       </Button>

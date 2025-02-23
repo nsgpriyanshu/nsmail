@@ -19,7 +19,7 @@ function Note() {
       <Separator />
       <AnimationContainer animation="fadeUp" delay={0.4}>
         <div className="flex justify-center">
-          <Image src="/images/NotEase_Notes.svg" width={700} height={700} alt="Notes Visual" />
+          <Image src="/images/NotEase_Notes.png" width={700} height={700} alt="Notes Visual" />
         </div>
       </AnimationContainer>
     </div>

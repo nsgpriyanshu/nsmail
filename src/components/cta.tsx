@@ -70,7 +70,7 @@ const CTA = () => {
               <div className="flex flex-wrap items-center justify-center gap-4 rounded-full bg-neutral-900 px-4 py-2.5 md:flex-row">
                 {HIGHLIGHTS.map((item, index) => (
                   <AnimationContainer key={index} animation="fadeRight" delay={0.7 + index * 0.1}>
-                    <div className="flex items-center gap-2 last:hidden md:last:flex">
+                    <div className="flex items-center gap-2  md:last:flex">
                       <Image
                         src={item.icon}
                         alt={item.label}
@@ -78,7 +78,7 @@ const CTA = () => {
                         height={1024}
                         className="size-5 text-primary"
                       />
-                      <span className="text-sm text-foreground">{item.label}</span>
+                      <span className="text-[10px] md:text-sm text-foreground">{item.label}</span>
                     </div>
                   </AnimationContainer>
                 ))}

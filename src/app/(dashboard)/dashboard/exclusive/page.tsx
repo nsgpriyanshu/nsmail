@@ -17,7 +17,7 @@ function Exclusive() {
       <Separator />
       <AnimationContainer animation="fadeUp" delay={0.4}>
         <div className="flex justify-center">
-          <Image src="/images/NotEase_Exclusive.svg" width={850} height={850} alt="Notes Visual" />
+          <Image src="/images/NotEase_Exclusive.png" width={850} height={850} alt="Notes Visual" />
         </div>
       </AnimationContainer>
       {/* Exclusive Features List */}

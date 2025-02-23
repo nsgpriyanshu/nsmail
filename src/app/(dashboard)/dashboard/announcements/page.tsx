@@ -30,7 +30,7 @@ function Announcements() {
       <AnimationContainer animation="fadeUp" delay={0.4}>
         <div className="flex justify-center">
           <Image
-            src="/images/NotEase_Announcements.svg"
+            src="/images/NotEase_Announcements.png"
             width={500}
             height={500}
             alt="Notes Visual"
