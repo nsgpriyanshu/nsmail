@@ -17,7 +17,7 @@ export const FAQS: FAQItem[] = [
   {
     question: 'Are these notes officially provided by the college?',
     answer:
-      'No, these notes are created and shared to help students understand concepts better. They are based on the syllabus but are not official college materials.',
+      'No, these notes are created by the top students and shared to help students understand concepts better. They are based on the syllabus but are not official college materials.',
   },
   {
     question: 'Can I contribute my own notes?',

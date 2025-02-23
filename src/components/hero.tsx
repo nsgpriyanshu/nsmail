@@ -42,7 +42,7 @@ const Hero = () => {
 
           <AnimationContainer animation="fadeUp" delay={0.8}>
             <div className="w-full">
-              <Link href="/notes">
+              <Link href="/dashboard/notes">
                 <Button size="md" className="w-full md:w-auto">
                   Browse Notes
                 </Button>
@@ -79,7 +79,7 @@ const Hero = () => {
               <div className="pointer-events-none absolute inset-y-0 right-1/4 z-50 hidden h-full w-1/3 bg-gradient-to-l from-background lg:block"></div>
               <div className="lg:absolute lg:inset-0">
                 <Image
-                  src="/images/dashboard.png"
+                  src="/images/hero.png"
                   alt="Notes Preview"
                   sizes="1000px"
                   width={1024}

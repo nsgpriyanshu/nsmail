@@ -78,7 +78,7 @@ const CTA = () => {
                         height={1024}
                         className="size-5 text-primary"
                       />
-                      <span className="text-[10px] text-foreground md:text-sm">{item.label}</span>
+                      <span className="text-sm text-foreground">{item.label}</span>
                     </div>
                   </AnimationContainer>
                 ))}
