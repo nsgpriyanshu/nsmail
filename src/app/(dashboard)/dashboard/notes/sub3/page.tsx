@@ -14,7 +14,7 @@ function Sub3() {
     fetch('/notes/notes.json')
       .then(res => res.json())
       .then(data => {
-        const mechanicsNotes = data.filter((note: Note) => note.sub === 'Engineering Mechanics')
+        const mechanicsNotes = data.filter((note: Note) => note.sub === 'Engineering Physcis')
         setNotes(mechanicsNotes.sort((a: { id: number }, b: { id: number }) => a.id - b.id))
       })
       .catch(err => console.error('Error fetching notes:', err))
@@ -25,12 +25,11 @@ function Sub3() {
       <AnimationContainer animation="fadeUp" delay={0.2}>
         <div className="text-center">
           <h3 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
-            Engineering Mechanics Notes
+            Engineering Physcis Notes
           </h3>
           <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-            Master the fundamentals of engineering mechanics with these structured notes. Learn
-            about forces, equilibrium, motion, and other key principles crucial for engineering
-            success.
+            Master the fundamentals of Engineering Physcis with these structured notes. Learn about
+            forces, equilibrium, motion, and other key principles crucial for engineering success.
           </p>
         </div>
       </AnimationContainer>
@@ -62,7 +61,7 @@ function Sub3() {
           ))
         ) : (
           <p className="text-center text-muted-foreground">
-            No Engineering Mechanics notes available yet.
+            No Engineering Physcis notes available yet.
           </p>
         )}
       </div>

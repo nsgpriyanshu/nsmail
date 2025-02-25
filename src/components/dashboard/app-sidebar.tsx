@@ -66,7 +66,7 @@ const data = {
   ],
   Notes: [
     {
-      name: 'Python Basics',
+      name: 'Python Programming',
       url: '/dashboard/notes/sub1',
       icon: TerminalIcon,
     },
@@ -76,7 +76,7 @@ const data = {
       icon: PiIcon,
     },
     {
-      name: 'Engineering Mechanics',
+      name: 'Engineering Physcis',
       url: '/dashboard/notes/sub3',
       icon: AtomIcon,
     },

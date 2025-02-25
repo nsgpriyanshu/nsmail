@@ -29,7 +29,7 @@ const routeMapping: Record<string, BreadcrumbItem[]> = {
   '/dashboard/notes/sub1': [
     { title: 'Dashboard', link: '/' },
     { title: 'Notes', link: '/dashboard/notes' },
-    { title: 'Python Basics', link: '/dashboard/notes/sub1' },
+    { title: 'Python Programming', link: '/dashboard/notes/sub1' },
   ],
   '/dashboard/notes/sub2': [
     { title: 'Dashboard', link: '/' },
@@ -39,7 +39,7 @@ const routeMapping: Record<string, BreadcrumbItem[]> = {
   '/dashboard/notes/sub3': [
     { title: 'Dashboard', link: '/' },
     { title: 'Notes', link: '/dashboard/notes' },
-    { title: 'Engineering Mechanics', link: '/dashboard/notes/sub3' },
+    { title: 'Engineering Physcis', link: '/dashboard/notes/sub3' },
   ],
   '/dashboard/notes/sub4': [
     { title: 'Dashboard', link: '/' },
