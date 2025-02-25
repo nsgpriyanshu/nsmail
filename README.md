@@ -1,6 +1,6 @@
 # <img src="./public/icons/logo.png" width="25" height="25"> NotEase - A modern note-management platform for students.!
 
-![Home Page](./public/images/dashboard.svg)
+![Home Page](./public/images/hero.svg)
 
 Hey, check this out! It's called NotEase, and it's like a super-organized digital notebook just for students. You know how you have notes scattered everywhere? This keeps them all in one place!
 

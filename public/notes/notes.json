@@ -1,11 +1,11 @@
 [
     {
       "id": 1,
-      "sub": "Core",
-      "subcode": "CSE0000",
-      "chapter": "Core description",
-      "topic": "Core topic",
-      "file": "/public/notes/sub1/chapter1.pdf"
+      "sub": "Python",
+      "subcode": "CS P110",
+      "chapter": "Experiment 1(a) - Observation",
+      "topic": "List Method - Practical Part",
+      "file": "/public/notes/sub1/Exp1(a)-observation-python.pdf"
     }
   ]
   
