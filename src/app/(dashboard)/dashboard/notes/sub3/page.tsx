@@ -71,4 +71,3 @@ function Sub3() {
 }
 
 export default Sub3
-
