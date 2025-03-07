@@ -1,25 +1,61 @@
 [
-    {
-      "id": 1,
-      "sub": "Python",
-      "subcode": "CSP110",
-      "chapter": "Experiment 1(a) - Observation",
-      "topic": "List Method - Practical Part",
-      "file": "/notes/sub1/Exp1a-observation-python.pdf"
-    }, {
-      "id": 2,
-      "sub": "Python",
-      "subcode": "CSP110",
-      "chapter": "Experiment 1(b) - Observation",
-      "topic": "Dictionary - Practical Part",
-      "file": "/notes/sub1/Exp1b-observation-python.pdf"
-    }, {
-      "id": 3,
-      "sub": "Python",
-      "subcode": "CSP110",
-      "chapter": "Experiment 1(c) - Observation",
-      "topic": "Tuple - Practical Part",
-      "file": "/notes/sub1/Exp1c-observation-python.pdf"
-    }
-  ]
+  {
+    "id": 1,
+    "sub": "Python",
+    "subcode": "CSP110",
+    "chapter": "Experiment 1(a) - Observation",
+    "topic": "List Method - Practical Part",
+    "file": "/notes/sub1/Exp1a-observation-python.pdf"
+  }, {
+    "id": 2,
+    "sub": "Python",
+    "subcode": "CSP110",
+    "chapter": "Experiment 1(b) - Observation",
+    "topic": "Dictionary - Practical Part",
+    "file": "/notes/sub1/Exp1b-observation-python.pdf"
+  }, {
+    "id": 3,
+    "sub": "Python",
+    "subcode": "CSP110",
+    "chapter": "Experiment 1(c) - Observation",
+    "topic": "Tuple - Practical Part",
+    "file": "/notes/sub1/Exp1c-observation-python.pdf"
+  }, {
+    "id": 4,
+    "sub": "Python",
+    "subcode": "CST110",
+    "chapter": "Introduction to Python - Unit 01",
+    "topic": "Introduction - Theory Part",
+    "file": "/notes/sub1/UT-01-theory-python.pdf"
+  }, {
+    "id": 5,
+    "sub": "English",
+    "subcode": "ENT105",
+    "chapter": "Unit 01",
+    "topic": "Word Formation - Theory Part",
+    "file": "/notes/sub4/UT-01-theory-english.pdf"
+  }, {
+    "id": 6,
+    "sub": "English",
+    "subcode": "EPT105",
+    "chapter": "Etymology",
+    "topic": "Etymology - Practical Part",
+    "file": "/notes/sub4/Etymology-practical-english.pdf"
+  },  {
+    "id": 7,
+    "sub": "English",
+    "subcode": "EPT105",
+    "chapter": "Prefix-Suffix and Abbreviation",
+    "topic": "Prefix & Suffix with Abbreviation - Practical Part",
+    "file": "/notes/sub4/Psa-practical-english.pdf"
+  }, {
+    "id": 8,
+    "sub": "Engineering Physics",
+    "subcode": "PHP108",
+    "chapter": "Experiment 1 - Observation",
+    "topic": "Newtons Ring - Practical Part",
+    "file": "/notes/sub3/Exp1-observation-physics.pdf"
+  }
+]
+
   

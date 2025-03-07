@@ -15,8 +15,6 @@ Hey, check this out! It's called NotEase, and it's like a super-organized digita
 - **Unlock Awesome Extras!**
   ![Exclusive Perks](./public/images/NotEase_Exclusive.svg)
   - Want even cooler features? NotEase has exclusive perks you can get for a small price. Think of it like getting extra power-ups for your studies! Maybe it's extra storage, or special tools to help you study. It's like a little upgrade for your school life.
-- **And So Much More!**
-  - There's tons of other stuff too, like... (You could add more features here as you develop them!)
 
 ## How It Works (Tech Talk, Simplified):
 

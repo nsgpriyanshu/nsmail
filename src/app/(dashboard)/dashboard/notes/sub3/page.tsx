@@ -8,61 +8,87 @@ import React, { useEffect, useState } from 'react'
 import { FileTextIcon } from 'lucide-react'
 
 function Sub3() {
-  const [notes, setNotes] = useState<Note[]>([])
+  const [theoryNotes, setTheoryNotes] = useState<Note[]>([])
+  const [practicalNotes, setPracticalNotes] = useState<Note[]>([])
 
   useEffect(() => {
     fetch('/notes/notes.json')
       .then(res => res.json())
       .then(data => {
-        const mechanicsNotes = data.filter((note: Note) => note.sub === 'Engineering Physcis')
-        setNotes(mechanicsNotes.sort((a: { id: number }, b: { id: number }) => a.id - b.id))
+        const physicsNotes = data.filter((note: Note) => note.sub === 'Engineering Physics')
+        const sortedNotes = physicsNotes.sort((a: { id: number }, b: { id: number }) => a.id - b.id)
+
+        const theory = sortedNotes.filter(
+          (note: { chapter: string }) =>
+            !note.chapter.toLowerCase().includes('practical') &&
+            !note.chapter.toLowerCase().includes('experiment'),
+        )
+        const practical = sortedNotes.filter(
+          (note: { chapter: string }) =>
+            note.chapter.toLowerCase().includes('practical') ||
+            note.chapter.toLowerCase().includes('experiment'),
+        )
+
+        setTheoryNotes(theory)
+        setPracticalNotes(practical)
       })
       .catch(err => console.error('Error fetching notes:', err))
   }, [])
 
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center space-y-8 p-6 sm:p-8 md:p-10 lg:p-12">
+    <div className="mx-auto flex w-full max-w-6xl flex-col items-center space-y-8 p-6 sm:p-8 md:p-10 lg:p-12">
       <AnimationContainer animation="fadeUp" delay={0.2}>
         <div className="text-center">
           <h3 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
-            Engineering Physcis Notes
+            Engineering Physics Notes
           </h3>
           <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-            Master the fundamentals of Engineering Physcis with these structured notes. Learn about
-            forces, equilibrium, motion, and other key principles crucial for engineering success.
+            Master the fundamentals of Engineering Physics with these structured notes.
           </p>
         </div>
       </AnimationContainer>
       <Separator />
       <div className="w-full space-y-6">
-        {notes.length > 0 ? (
-          notes.map(note => (
-            <AnimationContainer key={note.id} animation="fadeUp" delay={note.id * 0.1 + 0.2}>
-              <Card className="mx-auto w-full max-w-4xl bg-[#191919] shadow-md">
-                <CardHeader className="flex flex-row items-center justify-start gap-4">
+        {theoryNotes.length > 0 && (
+          <div>
+            <h3 className="mb-4 text-xl font-semibold">Theory Notes</h3>
+            {theoryNotes.map(note => (
+              <Card key={note.id} className="bg-[#191919] shadow-md">
+                <CardHeader className="flex flex-row items-center gap-4">
                   <FileTextIcon className="h-6 w-6 text-muted-foreground" />
-                  <CardTitle className="text-lg font-semibold">{note.chapter}</CardTitle>
+                  <CardTitle>{note.chapter}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">Subject Code: {note.subcode}</p>
-                  {note.topic && (
-                    <p className="text-sm text-muted-foreground">Topic: {note.topic}</p>
-                  )}
-                  <a
-                    href={note.file}
-                    download
-                    className="mt-2 inline-block text-blue-600 hover:text-blue-500"
-                  >
+                  <p>Subject Code: {note.subcode}</p>
+                  {note.topic && <p>Topic: {note.topic}</p>}
+                  <a href={note.file} download className="text-blue-600 hover:text-blue-500">
                     Download PDF
                   </a>
                 </CardContent>
               </Card>
-            </AnimationContainer>
-          ))
-        ) : (
-          <p className="text-center text-muted-foreground">
-            No Engineering Physcis notes available yet.
-          </p>
+            ))}
+          </div>
+        )}
+
+        {practicalNotes.length > 0 && (
+          <div>
+            <h3 className="mb-4 text-xl font-semibold">Practical Notes</h3>
+            {practicalNotes.map(note => (
+              <Card key={note.id} className="bg-[#191919] shadow-md">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <FileTextIcon className="h-6 w-6 text-muted-foreground" />
+                  <CardTitle>{note.chapter}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Subject Code: {note.subcode}</p>
+                  {note.topic && <p>Topic: {note.topic}</p>}
+                  <a href={note.file} download className="text-blue-600 hover:text-blue-500">
+                    Download PDF
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         )}
       </div>
     </div>
