@@ -31,4 +31,3 @@ All notable changes to this project will be documented in this file.
 
 - Add new notes ([10335e0](https://github.com/nsgpriyanshu/notease/commit/10335e03e181295ec5dfe734fb7efcf8120631a2))
 - Remove test files ([c20561d](https://github.com/nsgpriyanshu/notease/commit/c20561d6bea96a0508803dc86334d3b5a7343e68))
-

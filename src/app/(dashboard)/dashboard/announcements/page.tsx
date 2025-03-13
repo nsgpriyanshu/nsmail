@@ -13,6 +13,11 @@ function Announcements() {
         'Huge congratulations to everyone for successfully completing your first semester! You worked hard, and you did it! You can find these resources right here! We hope they help you have a fantastic second semester. Keep up the great work!',
       date: 'February 23, 2025',
     },
+    {
+      title: '***',
+      content: '***',
+      date: '***',
+    },
   ]
 
   return (

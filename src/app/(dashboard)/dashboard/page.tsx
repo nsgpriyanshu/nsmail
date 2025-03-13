@@ -1,6 +1,6 @@
 'use client'
 
-import { FileText, Target } from 'lucide-react'
+import { FileText, GoalIcon, ReceiptCentIcon, Target } from 'lucide-react'
 import AnimationContainer from '@/components/global/animation-container'
 import { Calendar } from '@/components/ui/calendar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -20,13 +20,18 @@ const quotes = [
 function Dashboard() {
   const [date, setDate] = useState<Date | undefined>(new Date())
   const [notesCount, setNotesCount] = useState<number>(0)
+  const [latestNotes, setLatestNotes] = useState<Note[]>([])
   const [quote, setQuote] = useState<string>('')
 
   useEffect(() => {
     fetch('/notes/notes.json')
       .then(res => res.json())
       .then((data: Note[]) => {
+        // Sort notes by id in descending order (newest first)
+        const sortedNotes = data.sort((a, b) => b.id - a.id)
+
         setNotesCount(data.length) // Count total number of notes
+        setLatestNotes(sortedNotes.slice(0, 2)) // Get the two latest notes
       })
       .catch(err => console.error('Error fetching notes:', err))
 
@@ -73,27 +78,33 @@ function Dashboard() {
               </Card>
             </div>
             <Card className="bg-[#191919]">
-              <CardHeader>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle>Recent Activity</CardTitle>
+                <GoalIcon className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {[
-                    { action: '', subject: '', time: 'Nothing has been uploaded yet' },
-                    { action: '', subject: '', time: '' },
-                    { action: '', subject: '', time: '' },
-                  ].map((activity, index) => (
-                    <div key={index} className="flex items-center">
-                      <div className="ml-4 space-y-1">
-                        <p className="text-sm font-medium leading-none">{activity.action}</p>
-                        <p className="text-sm text-muted-foreground">{activity.subject}</p>
+                {latestNotes.length > 0 ? (
+                  <div className="space-y-4">
+                    {latestNotes.map((note, index) => (
+                      <div key={index} className="flex items-center">
+                        <div className="ml-4 space-y-1">
+                          <p className="text-sm font-medium leading-none text-muted-foreground">
+                            {note.chapter}
+                          </p>
+                          <p className="text-sm font-medium leading-none text-muted-foreground">
+                            {note.sub}
+                          </p>
+                        </div>
                       </div>
-                      <div className="ml-auto text-sm font-medium text-muted-foreground">
-                        {activity.time}
-                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex items-center">
+                    <div className="ml-4 space-y-1">
+                      <p className="text-sm font-medium leading-none">No recent activity</p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
