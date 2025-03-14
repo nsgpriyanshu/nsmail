@@ -206,6 +206,14 @@ const SignUpPage = () => {
           </div>
         </div>
         <div id="clerk-captcha"></div>
+        <div className="flex items-center space-x-2">
+          <p className="text-center text-sm text-muted-foreground">
+            I accept the{' '}
+            <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
+              Terms of Service
+            </Link>
+          </p>
+        </div>
         <Button type="submit" disabled={isLoading}>
           {isLoading ? <LoaderIcon className="h-4 w-4 animate-spin" /> : 'Continue'}
         </Button>
