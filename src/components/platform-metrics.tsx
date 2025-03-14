@@ -6,6 +6,7 @@ import AnimationContainer from './global/animation-container'
 import Wrapper from './global/wrapper'
 import { Button } from './ui/button'
 import SectionBadge from './ui/section-badge'
+import Link from 'next/link'
 
 const PlatformMetrics = () => {
   return (
@@ -29,7 +30,9 @@ const PlatformMetrics = () => {
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={0.5}>
-            <Button className="mt-4">Start Learning Now</Button>
+            <Link href="/signup">
+              <Button className="mt-4">Start Exploring Now</Button>
+            </Link>
           </AnimationContainer>
         </div>
 

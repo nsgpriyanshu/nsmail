@@ -14,9 +14,10 @@ function Announcements() {
       date: 'February 23, 2025',
     },
     {
-      title: '***',
-      content: '***',
-      date: '***',
+      title: 'We Value Your Feedback!',
+      content:
+        'Thank you for using NotEase! We are constantly working to improve our platform and provide the best resources for your studies. We would greatly appreciate it if you could take a moment to share your thoughts and suggestions. Your feedback is invaluable in helping us serve you better.',
+      date: 'March 14, 2025',
     },
   ]
 

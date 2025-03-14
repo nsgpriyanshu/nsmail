@@ -47,50 +47,90 @@ function Sub3() {
           </p>
         </div>
       </AnimationContainer>
-      <Separator />
-      <div className="w-full space-y-6">
-        {theoryNotes.length > 0 && (
-          <div>
-            <h3 className="mb-4 text-xl font-semibold">Theory Notes</h3>
-            {theoryNotes.map(note => (
-              <Card key={note.id} className="bg-[#191919] shadow-md">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <FileTextIcon className="h-6 w-6 text-muted-foreground" />
-                  <CardTitle>{note.chapter}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>Subject Code: {note.subcode}</p>
-                  {note.topic && <p>Topic: {note.topic}</p>}
-                  <a href={note.file} download className="text-blue-600 hover:text-blue-500">
-                    Download PDF
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
 
-        {practicalNotes.length > 0 && (
-          <div>
-            <h3 className="mb-4 text-xl font-semibold">Practical Notes</h3>
-            {practicalNotes.map(note => (
-              <Card key={note.id} className="bg-[#191919] shadow-md">
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <FileTextIcon className="h-6 w-6 text-muted-foreground" />
-                  <CardTitle>{note.chapter}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>Subject Code: {note.subcode}</p>
-                  {note.topic && <p>Topic: {note.topic}</p>}
-                  <a href={note.file} download className="text-blue-600 hover:text-blue-500">
-                    Download PDF
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
-      </div>
+      <Separator />
+
+      {theoryNotes.length === 0 && practicalNotes.length === 0 ? (
+        <p className="text-center text-muted-foreground">No notes uploaded yet.</p>
+      ) : (
+        <div className="flex w-full max-w-5xl flex-col md:flex-row md:space-x-6">
+          {theoryNotes.length > 0 && (
+            <div className="w-full flex-1">
+              {' '}
+              {/* Make it full width on mobile */}
+              <h3 className="mb-4 text-center text-xl font-semibold">Theory Notes</h3>
+              <div className="w-full space-y-4">
+                {theoryNotes.map(note => (
+                  <AnimationContainer key={note.id} animation="fadeUp" delay={note.id * 0.1 + 0.2}>
+                    <Card className="mx-auto w-full bg-[#191919] shadow-md">
+                      <CardHeader className="flex flex-row items-center justify-start gap-4">
+                        <FileTextIcon className="h-6 w-6 text-muted-foreground" />
+                        <CardTitle className="text-lg font-semibold">{note.chapter}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-2">
+                        <p className="text-sm text-muted-foreground">
+                          Subject Code: {note.subcode}
+                        </p>
+                        {note.topic && (
+                          <p className="text-sm text-muted-foreground">Topic: {note.topic}</p>
+                        )}
+                        <a
+                          href={note.file}
+                          download
+                          className="mt-2 inline-block text-blue-600 hover:text-blue-500"
+                        >
+                          Download PDF
+                        </a>
+                      </CardContent>
+                    </Card>
+                  </AnimationContainer>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {theoryNotes.length > 0 && practicalNotes.length > 0 && (
+            <Separator orientation="vertical" className="hidden h-full md:block" />
+          )}
+
+          {practicalNotes.length > 0 && (
+            <div className="w-full flex-1">
+              {' '}
+              {/* Make it full width on mobile */}
+              <h3 className="mb-4 mt-2 text-center text-xl font-semibold md:mt-0">
+                Practical Notes
+              </h3>
+              <div className="w-full space-y-4">
+                {practicalNotes.map(note => (
+                  <AnimationContainer key={note.id} animation="fadeUp" delay={note.id * 0.1 + 0.2}>
+                    <Card className="mx-auto w-full bg-[#191919] shadow-md">
+                      <CardHeader className="flex flex-row items-center justify-start gap-4">
+                        <FileTextIcon className="h-6 w-6 text-muted-foreground" />
+                        <CardTitle className="text-lg font-semibold">{note.chapter}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-2">
+                        <p className="text-sm text-muted-foreground">
+                          Subject Code: {note.subcode}
+                        </p>
+                        {note.topic && (
+                          <p className="text-sm text-muted-foreground">Topic: {note.topic}</p>
+                        )}
+                        <a
+                          href={note.file}
+                          download
+                          className="mt-2 inline-block text-blue-600 hover:text-blue-500"
+                        >
+                          Download PDF
+                        </a>
+                      </CardContent>
+                    </Card>
+                  </AnimationContainer>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

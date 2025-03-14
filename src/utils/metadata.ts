@@ -12,7 +12,7 @@ const siteConfig = {
 }
 
 export const generateMetadata = ({
-  title = `${process.env.NEXT_PUBLIC_APP_NAME} | Home`,
+  title = `${process.env.NEXT_PUBLIC_APP_NAME} - Home`,
   description = `Simplify Your Studies with Quality Notes`,
   image = '/thumbnail.png',
   icons = [

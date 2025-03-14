@@ -20,10 +20,10 @@ const RESOURCES_LINKS = [
 ]
 
 const COMPANY_LINKS = [
-  { label: 'About Us', href: '#' },
-  { label: 'Contact', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: 'https://contact-priyanshu-ps.vercel.app/' },
+  { label: 'Privacy Policy', href: '/policy' },
+  { label: 'Terms of Service', href: '/terms' },
 ]
 
 const SOCIAL_LINKS = [

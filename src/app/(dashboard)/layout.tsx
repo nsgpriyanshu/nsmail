@@ -9,11 +9,6 @@ import React from 'react'
 import { base, heading } from '@/constants/fonts'
 import { cn } from '@/lib'
 
-// export const metadata: Metadata = {
-//   title: `${process.env.NEXT_PUBLIC_APP_NAME} | Dashboard`,
-//   description: 'Access and manage all your study materials in one place. Upload, download, and organize your notes effortlessly with NotEase.'
-// }
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { isSignedIn } = useAuth()
 

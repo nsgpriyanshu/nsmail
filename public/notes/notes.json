@@ -55,6 +55,20 @@
     "chapter": "Experiment 1 - Observation",
     "topic": "Newtons Ring - Practical Part",
     "file": "/notes/sub3/Exp1-observation-physics.pdf"
+  },  {
+    "id": 9,
+    "sub": "Python",
+    "subcode": "CSP110",
+    "chapter": "Python Program Flow Control Conditional blocks - Unit 02",
+    "topic": "Control Structures - Theory Part",
+    "file": "/notes/sub1/UT-02-theory-python.pdf"
+  }, {
+    "id": 10,
+    "sub": "Engineering Physics",
+    "subcode": "PHP108",
+    "chapter": "Experiment 2 - Observation",
+    "topic": "Air Wedge - Practical Part",
+    "file": "/notes/sub3/Exp2-observation-physics.pdf"
   }
 ]
 
