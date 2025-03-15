@@ -100,7 +100,7 @@ function AccountProfile() {
         </div>
       </AnimationContainer>
       <Separator />
-      <Card className="w-full bg-[#191919]">
+      <Card className="w-full dark:bg-[#191919]">
         <CardHeader>
           <CardTitle>Personal Information</CardTitle>
           <CardDescription>Update your personal details.</CardDescription>

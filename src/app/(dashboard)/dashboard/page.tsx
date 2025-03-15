@@ -56,7 +56,7 @@ function Dashboard() {
           {/* Left Side - 70% */}
           <div className="flex w-full flex-col gap-4 md:w-[70%]">
             <div className="grid gap-4 md:grid-cols-2">
-              <Card className="bg-[#191919]">
+              <Card className="dark:bg-[#191919]">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Total Notes</CardTitle>
                   <FileText className="h-4 w-4 text-muted-foreground" />
@@ -66,7 +66,7 @@ function Dashboard() {
                   <p className="text-xs text-muted-foreground">+2 from last week</p>
                 </CardContent>
               </Card>
-              <Card className="bg-[#191919]">
+              <Card className="dark:bg-[#191919]">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Upcoming Notes</CardTitle>
                   <Target className="h-4 w-4 text-muted-foreground" />
@@ -77,7 +77,7 @@ function Dashboard() {
                 </CardContent>
               </Card>
             </div>
-            <Card className="bg-[#191919]">
+            <Card className="dark:bg-[#191919]">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle>Recent Activity</CardTitle>
                 <GoalIcon className="h-4 w-4 text-muted-foreground" />
@@ -118,7 +118,7 @@ function Dashboard() {
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="w-full rounded-md border bg-[#191919]"
+              className="w-full rounded-md border dark:bg-[#191919]"
             />
           </div>
         </div>

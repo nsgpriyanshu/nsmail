@@ -58,7 +58,7 @@ function Sub4() {
               <div className="w-full space-y-4">
                 {theoryNotes.map(note => (
                   <AnimationContainer key={note.id} animation="fadeUp" delay={note.id * 0.1 + 0.2}>
-                    <Card className="mx-auto w-full bg-[#191919] shadow-md">
+                    <Card className="mx-auto w-full shadow-md dark:bg-[#191919]">
                       <CardHeader className="flex flex-row items-center justify-start gap-4">
                         <FileTextIcon className="h-6 w-6 text-muted-foreground" />
                         <CardTitle className="text-lg font-semibold">{note.chapter}</CardTitle>
@@ -95,7 +95,7 @@ function Sub4() {
               <div className="w-full space-y-4">
                 {practicalNotes.map(note => (
                   <AnimationContainer key={note.id} animation="fadeUp" delay={note.id * 0.1 + 0.2}>
-                    <Card className="mx-auto w-full bg-[#191919] shadow-md">
+                    <Card className="mx-auto w-full shadow-md dark:bg-[#191919]">
                       <CardHeader className="flex flex-row items-center justify-start gap-4">
                         <FileTextIcon className="h-6 w-6 text-muted-foreground" />
                         <CardTitle className="text-lg font-semibold">{note.chapter}</CardTitle>

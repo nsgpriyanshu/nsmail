@@ -37,7 +37,7 @@ function Sub2() {
         {notes.length > 0 ? (
           notes.map(note => (
             <AnimationContainer key={note.id} animation="fadeUp" delay={note.id * 0.1 + 0.2}>
-              <Card className="mx-auto w-full max-w-4xl bg-[#191919] shadow-md">
+              <Card className="mx-auto w-full max-w-4xl shadow-md dark:bg-[#191919]">
                 <CardHeader className="flex flex-row items-center justify-start gap-4">
                   <FileTextIcon className="h-6 w-6 text-muted-foreground" />
                   <CardTitle className="text-lg font-semibold">{note.chapter}</CardTitle>
