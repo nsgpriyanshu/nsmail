@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'font-base min-h-screen overflow-x-hidden bg-[#101010] text-foreground antialiased',
+          'font-base min-h-screen overflow-x-hidden text-foreground antialiased dark:bg-[#101010]',
           base.variable,
           heading.variable,
         )}
