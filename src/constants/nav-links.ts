@@ -1,14 +1,10 @@
 export const NAV_LINKS = [
   {
-    name: 'Features',
+    name: 'Contacting',
     link: '/',
   },
   {
-    name: 'Pricing',
+    name: 'Marketing',
     link: '/',
-  },
-  {
-    name: 'Contact',
-    link: 'https://contact-priyanshu-ps.vercel.app/',
   },
 ]

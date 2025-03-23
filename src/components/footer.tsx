@@ -50,8 +50,15 @@ const Footer = () => {
           <AnimationContainer animation="fadeRight" delay={0.4}>
             <div className="flex flex-col items-start justify-start md:max-w-[300px]">
               <div className="flex items-center gap-2">
-                <Icons.logo className="-mt-1 h-7 w-max" />
-                <span className="text-lg font-medium lg:text-xl">NoteEase</span>
+                <Image
+                  src="/icons/icon.png"
+                  alt="Notes Preview"
+                  sizes="1000px"
+                  width={37}
+                  height={37}
+                  className="rounded-xl object-contain"
+                />
+                <span className="text-lg font-medium lg:text-xl">nsMail</span>
               </div>
               <p className="mt-4 text-sm text-muted-foreground">India</p>
               {/* <div className="mt-6 flex items-center gap-4">

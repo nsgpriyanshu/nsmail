@@ -23,19 +23,19 @@ const Hero = () => {
         <div className="flex w-full flex-col items-start gap-10 py-8">
           <div className="flex flex-col items-start gap-4">
             <AnimationContainer animation="fadeUp" delay={0.2}>
-              <SectionBadge title="Trusted by College Students" />
+              <SectionBadge title="Let's Connect and Collaborate" />
             </AnimationContainer>
 
             <AnimationContainer animation="fadeUp" delay={0.4}>
               <h1 className="bg-gradient-to-r from-foreground to-neutral-500 bg-clip-text text-5xl font-medium !leading-tight text-transparent lg:text-6xl">
-                Simplify Your Studies with Quality Notes
+                Follow a vision and think differently
               </h1>
             </AnimationContainer>
 
             <AnimationContainer animation="fadeUp" delay={0.6}>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-                Access well-organized and high-quality study notes for your college courses.
-                Download chapter-wise PDFs and prepare effectively for your exams.
+                Ohh, again, you've got your doubts, huh? Well, let me know what your problem is—but
+                make sure to read the stuff below first.
               </p>
             </AnimationContainer>
           </div>
@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="w-full">
               <Link href="/dashboard/notes">
                 <Button size="md" className="w-full md:w-auto">
-                  Browse Notes
+                  Send a Message
                 </Button>
               </Link>
             </div>
@@ -53,7 +53,7 @@ const Hero = () => {
           <AnimationContainer animation="fadeUp" delay={1}>
             <div className="flex flex-col items-start gap-4 py-4">
               <p className="text-sm text-muted-foreground md:text-base">
-                Recommended by Top Students
+                Recommended by Top Companies
               </p>
               <div className="relative w-full max-w-[calc(100vw-2rem)] lg:max-w-lg">
                 <Marquee className="select-none [--duration:40s] [--gap:2rem]">
@@ -80,26 +80,30 @@ const Hero = () => {
               <div className="lg:absolute lg:inset-0">
                 <Image
                   src="/images/hero.png"
-                  alt="Notes Preview"
+                  alt="nsMail Preview"
                   sizes="1000px"
-                  width={1024}
-                  height={1024}
-                  className="h-auto min-w-full rounded-xl object-contain lg:rounded-2xl"
+                  width={800}
+                  height={800}
+                  className="rounded-xl object-contain lg:rounded-2xl"
                 />
               </div>
             </div>
           </div>
         </AnimationContainer>
       </div>
-      {/* <AnimationContainer animation="scaleUp" delay={1.2} className="absolute w-2/3 h-auto -top-[8%] left-1/4 -z-10">
-                <Image
-                    src="/images/hero-gradient.png"
-                    alt="Notes Gradient Background"
-                    width={1024}
-                    height={1024}
-                    className="object-cover w-full h-auto"
-                />
-            </AnimationContainer> */}
+      <AnimationContainer
+        animation="scaleUp"
+        delay={1.2}
+        className="absolute -top-[8%] left-1/4 -z-10 h-auto w-2/3"
+      >
+        <Image
+          src="/images/hero-gradient.png"
+          alt="Notes Gradient Background"
+          width={1024}
+          height={1024}
+          className="h-auto w-full object-cover"
+        />
+      </AnimationContainer>
     </Wrapper>
   )
 }

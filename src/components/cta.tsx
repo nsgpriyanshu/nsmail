@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import AnimationContainer from './global/animation-container'
+import Image from 'next/image'
 import Wrapper from './global/wrapper'
 import { Button } from './ui/button'
 import { FlickeringGrid } from './ui/flickering-grid'
@@ -55,14 +55,8 @@ const CTA = () => {
 
           <AnimationContainer animation="fadeUp" delay={0.4}>
             <h2 className="bg-gradient-to-b from-foreground to-neutral-400 bg-clip-text text-3xl font-medium !leading-tight text-transparent md:text-5xl lg:text-6xl">
-              Find Notes Easily!
+              Want This System For You?
             </h2>
-          </AnimationContainer>
-
-          <AnimationContainer animation="fadeUp" delay={0.5}>
-            <p className="mx-auto mt-4 max-w-lg text-sm text-muted-foreground md:text-base lg:text-lg">
-              Browse, search, and download notes effortlessly to stay ahead in your studies.
-            </p>
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={0.6}>
@@ -86,10 +80,18 @@ const CTA = () => {
             </div>
           </AnimationContainer>
 
+          <AnimationContainer animation="fadeUp" delay={0.5}>
+            <p className="mx-auto mt-4 max-w-lg text-sm text-muted-foreground md:text-base lg:text-lg">
+              Learn how to set up your own contact system using our documentation.
+            </p>
+          </AnimationContainer>
+
           <AnimationContainer animation="fadeUp" delay={1}>
-            <Link href="/signup">
+            <Link href="/documentation">
+              {' '}
+              {/* Replace with your documentation link */}
               <Button size="lg" className="mt-6">
-                Explore Notes
+                Checkout the Documentation
                 <ArrowRightIcon className="ml-2 size-4" />
               </Button>
             </Link>

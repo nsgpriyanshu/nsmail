@@ -1,6 +1,6 @@
 {
-  "name": "notease",
-  "description": "NoteEase - A modern note-management platform for students.",
+  "name": "nsmail",
+  "description": "nsMail - An easier way to create contact pages!",
   "version": "1.2.0",
   "private": true,
   "scripts": {
@@ -25,7 +25,6 @@
   },
   "homepage": "https://nsgpriyanshu.github.io/notease",
   "dependencies": {
-    "@clerk/nextjs": "^6.9.15",
     "@hookform/resolvers": "^3.10.0",
     "@number-flow/react": "^0.5.5",
     "@radix-ui/react-accordion": "^1.2.2",
@@ -86,6 +85,7 @@
     "@commitlint/config-angular": "^19.7.1",
     "@eslint/eslintrc": "^3",
     "@favware/cliff-jumper": "^6.0.0",
+    "@types/axios": "^0.9.36",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

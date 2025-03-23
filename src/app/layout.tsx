@@ -3,7 +3,6 @@ import { base, heading } from '@/constants/fonts'
 import { cn } from '@/lib'
 import '@/styles/globals.css'
 import { generateMetadata } from '@/utils'
-import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = generateMetadata()
 
@@ -17,10 +16,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           heading.variable,
         )}
       >
-        <ClerkProvider>
-          <Toaster richColors theme="dark" position="bottom-center" />
-          {children}
-        </ClerkProvider>
+        <Toaster richColors theme="dark" position="bottom-center" />
+        {children}
       </body>
     </html>
   )

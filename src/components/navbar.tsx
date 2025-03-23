@@ -1,21 +1,18 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import { NAV_LINKS } from '@/constants'
 import { useClickOutside } from '@/hooks'
 import { cn } from '@/lib'
-import { useClerk } from '@clerk/nextjs'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { MenuIcon, XIcon } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { RefObject, useRef, useState } from 'react'
 import AnimationContainer from './global/animation-container'
 import Icons from './global/icons'
 import Wrapper from './global/wrapper'
 
 const Navbar = () => {
-  const { user } = useClerk()
-
   const ref = useRef<HTMLDivElement | null>(null)
   const [open, setOpen] = useState(false)
   const [visible, setVisible] = useState<boolean>(false)
@@ -66,7 +63,14 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
           >
             <Link href="/" className="flex items-center gap-2">
-              <Icons.logo className="-mt-1 h-7 w-max" />
+              <Image
+                src="/icons/icon.png"
+                alt="Notes Preview"
+                sizes="1000px"
+                width={30}
+                height={30}
+                className="h-auto min-w-full rounded-xl object-contain lg:rounded-2xl"
+              />
             </Link>
           </motion.div>
 
@@ -86,20 +90,6 @@ const Navbar = () => {
               ))}
             </AnimatePresence>
           </div>
-
-          <AnimationContainer animation="fadeLeft" delay={0.1}>
-            <div className="flex items-center gap-x-4">
-              {user ? (
-                <Link href="/dashboard">
-                  <Button>Dashboard</Button>
-                </Link>
-              ) : (
-                <Link href="/signup">
-                  <Button size="sm">Get started</Button>
-                </Link>
-              )}
-            </div>
-          </AnimationContainer>
         </Wrapper>
       </motion.div>
 
@@ -133,11 +123,6 @@ const Navbar = () => {
 
             <AnimationContainer animation="fadeLeft" delay={0.1}>
               <div className="flex items-center justify-center gap-x-4">
-                <Button size="sm">
-                  <Link href="/signup" className="flex items-center">
-                    Get started
-                  </Link>
-                </Button>
                 {open ? (
                   <XIcon className="text-black dark:text-white" onClick={() => setOpen(!open)} />
                 ) : (
@@ -157,7 +142,7 @@ const Navbar = () => {
               exit={{ opacity: 0 }}
               className="absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-2 rounded-b-xl bg-neutral-950 px-4 py-8 shadow-xl shadow-neutral-950"
             >
-              {NAV_LINKS.map((navItem: any, idx: number) => (
+              {NAV_LINKS.map((navItem, idx) => (
                 <AnimationContainer
                   key={`link=${idx}`}
                   animation="fadeRight"
@@ -173,40 +158,6 @@ const Navbar = () => {
                   </Link>
                 </AnimationContainer>
               ))}
-              <AnimationContainer animation="fadeUp" delay={0.5} className="w-full">
-                {user ? (
-                  <Link href="/dashboard" className="w-full">
-                    <Button
-                      onClick={() => setOpen(false)}
-                      variant="default"
-                      className="mt-2 block w-full md:hidden"
-                    >
-                      Dashboard
-                    </Button>
-                  </Link>
-                ) : (
-                  <>
-                    <Link href="/signin" className="w-full">
-                      <Button
-                        onClick={() => setOpen(false)}
-                        variant="secondary"
-                        className="mb-2 block w-full md:hidden"
-                      >
-                        Login
-                      </Button>
-                    </Link>
-                    <Link href="/signup" className="w-full">
-                      <Button
-                        onClick={() => setOpen(false)}
-                        variant="default"
-                        className="block w-full md:hidden"
-                      >
-                        Start for free
-                      </Button>
-                    </Link>
-                  </>
-                )}
-              </AnimationContainer>
             </motion.div>
           )}
         </AnimatePresence>

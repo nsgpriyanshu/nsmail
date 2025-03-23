@@ -15,13 +15,13 @@ const HowItWorks = () => {
 
         <AnimationContainer animation="fadeUp" delay={0.3}>
           <h1 className="bg-gradient-to-b from-foreground to-neutral-400 bg-clip-text text-2xl font-medium !leading-tight text-transparent md:text-4xl lg:text-5xl">
-            Find, Download, Study
+            How to send a message?
           </h1>
         </AnimationContainer>
 
         <AnimationContainer animation="fadeUp" delay={0.4}>
           <p className="mx-auto max-w-lg text-sm text-muted-foreground md:text-base lg:text-lg">
-            Get your notes in three simple steps and ace your exams.
+            See how your messages get from the website to my Discord.
           </p>
         </AnimationContainer>
       </div>

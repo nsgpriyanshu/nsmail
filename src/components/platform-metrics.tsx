@@ -14,24 +14,26 @@ const PlatformMetrics = () => {
       <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
         <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
           <AnimationContainer animation="fadeUp" delay={0.2}>
-            <SectionBadge title="Our Achievements" />
+            <SectionBadge title="Our Performance" />
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={0.3}>
             <h2 className="bg-gradient-to-b from-foreground to-neutral-400 bg-clip-text text-2xl font-medium !leading-tight text-transparent md:text-4xl lg:text-5xl">
-              Helping Students Succeed
+              Message Flow Metrics
             </h2>
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={0.4}>
             <p className="mx-auto max-w-2xl text-sm text-muted-foreground md:text-base lg:text-lg">
-              Thousands of students rely on our platform for high-quality study materials.
+              See how our messaging system performs with these key metrics.
             </p>
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={0.5}>
-            <Link href="/signup">
-              <Button className="mt-4">Start Exploring Now</Button>
+            <Link href="/contact">
+              {' '}
+              {/* Change to your contact page or signup, as needed */}
+              <Button className="mt-4">Contact Us</Button>
             </Link>
           </AnimationContainer>
         </div>
