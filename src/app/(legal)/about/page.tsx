@@ -41,7 +41,7 @@ const AboutUsPage = () => {
               <h2 className="text-xl font-medium md:text-2xl">Our Mission</h2>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
                 We believe that learning should be exciting and accessible. That's why we created
-                NotEase! We want to provide you with awesome study notes and resources to help you
+                nsmail! We want to provide you with awesome study notes and resources to help you
                 succeed.
               </p>
             </section>
@@ -49,7 +49,7 @@ const AboutUsPage = () => {
             <section>
               <h2 className="text-xl font-medium md:text-2xl">Who We Are</h2>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-                NotEase is a product of Creator's World, and was created by a group of learners, who
+                nsmail is a product of Creator's World, and was created by a group of learners, who
                 wanted to share helpful study materials with students like you. a group of learners,
                 who works hard to make sure the notes are clear, accurate, and easy to understand.
               </p>
@@ -58,7 +58,7 @@ const AboutUsPage = () => {
             <section>
               <h2 className="text-xl font-medium md:text-2xl">What We Offer</h2>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-                On NotEase, you'll find:
+                On nsmail, you'll find:
                 <ul className="list-inside list-disc">
                   <li>Easy-to-understand study notes.</li>
                   <li>Helpful PDFs and other resources.</li>
@@ -74,7 +74,7 @@ const AboutUsPage = () => {
                 <ul className="list-inside list-disc">
                   <li>Keep adding new and helpful content.</li>
                   <li>Make sure our site is safe and secure.</li>
-                  <li>Listen to your feedback and make NotEase even better.</li>
+                  <li>Listen to your feedback and make nsmail even better.</li>
                 </ul>
               </p>
             </section>

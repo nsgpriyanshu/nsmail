@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const SITE_URL = 'https://notease-ps.vercel.app/'
+const SITE_URL = 'https://nsmail-ps.vercel.app/'
 
 export async function GET() {
   const staticPages = ['', 'signin', 'signup', 'pricing', 'testimonials']

@@ -18,12 +18,12 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nsgpriyanshu/notease"
+    "url": "https://github.com/nsgpriyanshu/nsmail"
   },
   "bugs": {
-    "url": "https://github.com/nsgpriyanshu/notease/issues"
+    "url": "https://github.com/nsgpriyanshu/nsmail/issues"
   },
-  "homepage": "https://nsgpriyanshu.github.io/notease",
+  "homepage": "https://nsgpriyanshu.github.io/nsmail",
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@number-flow/react": "^0.5.5",

@@ -1,4 +1,4 @@
-# Contributing to NotEase
+# Contributing to nsmail
 
 First off, thank you for taking the time to contribute! Here are some guidelines to help you get started.
 
@@ -56,4 +56,4 @@ If your changes affect the documentation, update it accordingly. This includes t
 
 ## Thank You!
 
-Your contributions are greatly appreciated. Thank you for making NotEase better!
+Your contributions are greatly appreciated. Thank you for making nsmail better!

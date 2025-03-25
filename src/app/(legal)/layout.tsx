@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: `${process.env.NEXT_PUBLIC_APP_NAME} - Legal`,
-  description: 'Privacy Policy and Terms of Service for NotEase',
+  description: 'Privacy Policy and Terms of Service for nsmail',
 }
 
 export default function PrivacyPolicyLayout({ children }: { children: React.ReactNode }) {

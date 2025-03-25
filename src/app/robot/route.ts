@@ -10,7 +10,7 @@ Disallow: /dashboard/announcements
 Disallow: /dashboard/exclusive
 Disallow: /dashboard/notes
 Disallow: /dashboard/notes/*
-Sitemap: https://notease-ps.vercel.app/sitemap.xml
+Sitemap: https://nsmail-ps.vercel.app/sitemap.xml
 `
 
   return new NextResponse(robotsTxt, {

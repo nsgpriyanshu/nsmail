@@ -22,7 +22,7 @@ const TermsOfServicePage = () => {
 
           <AnimationContainer animation="fadeUp" delay={0.6}>
             <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-              Welcome to NotEase! These rules help keep our platform safe and fun for everyone.
+              Welcome to nsmail! These rules help keep our platform safe and fun for everyone.
             </p>
           </AnimationContainer>
         </div>
@@ -32,7 +32,7 @@ const TermsOfServicePage = () => {
             <section>
               <h2 className="text-xl font-medium md:text-2xl">1. Accepting These Rules</h2>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-                By using NotEase, you're agreeing to follow these Terms of Service. If you don't
+                By using nsmail, you're agreeing to follow these Terms of Service. If you don't
                 agree, you can't use our site.
               </p>
             </section>
@@ -40,7 +40,7 @@ const TermsOfServicePage = () => {
             <section>
               <h2 className="text-xl font-medium md:text-2xl">2. Your Account</h2>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-                To use NotEase, you'll need an account. When you sign up, please:
+                To use nsmail, you'll need an account. When you sign up, please:
               </p>
               <ul className="list-inside list-disc">
                 <li>Give us real and true information.</li>
@@ -63,7 +63,7 @@ const TermsOfServicePage = () => {
             <section>
               <h2 className="text-xl font-medium md:text-2xl">4. Your Responsibilities</h2>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-                When you use NotEase, please:
+                When you use nsmail, please:
               </p>
               <ul className="list-inside list-disc">
                 <li>Use it nicely and follow the rules.</li>
@@ -90,7 +90,7 @@ const TermsOfServicePage = () => {
             <section>
               <h2 className="text-xl font-medium md:text-2xl">6. Sometimes We Might Be Down</h2>
               <p className="text-sm text-muted-foreground md:text-base lg:text-lg">
-                We'll try to keep NotEase working, but sometimes we might need to fix things. We're
+                We'll try to keep nsmail working, but sometimes we might need to fix things. We're
                 not responsible if the site isn't working for a bit.
               </p>
             </section>
