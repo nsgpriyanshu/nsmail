@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 const siteConfig = {
-  siteName: `${process.env.NEXT_PUBLIC_APP_NAME}`,
+  siteName: `${process.env.NEXT_PUBLIC_APP_NAME} | nsMail`,
   siteDescription: 'An easier way to create contact pages!',
   links: {
     siteUrl: 'https://contact-priyanshu-ps.vercel.app/',
@@ -19,12 +19,12 @@ export const generateMetadata = ({
     {
       rel: 'apple-touch-icon',
       sizes: '32x32',
-      url: '/icons/logo-polka.png',
+      url: '/icons/icon-polka.png',
     },
     {
       rel: 'icon',
       sizes: '32x32',
-      url: '/icons/logo-polka.png',
+      url: '/icons/icon-polka.png',
     },
   ],
   noIndex = false,
