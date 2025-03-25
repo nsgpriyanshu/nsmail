@@ -117,7 +117,14 @@ const Navbar = () => {
           <div className="flex w-full items-center justify-between gap-x-4">
             <AnimationContainer animation="fadeRight" delay={0.1}>
               <Link href="/">
-                <Icons.logo className="-mt-1 h-7 w-max" />
+                <Image
+                  src="/icons/icon.png"
+                  alt="Notes Preview"
+                  sizes="1000px"
+                  width={30}
+                  height={30}
+                  className="h-auto min-w-full rounded-xl object-contain lg:rounded-2xl"
+                />
               </Link>
             </AnimationContainer>
 

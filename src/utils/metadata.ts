@@ -2,29 +2,29 @@ import { Metadata } from 'next'
 
 const siteConfig = {
   siteName: `${process.env.NEXT_PUBLIC_APP_NAME}`,
-  siteDescription: 'Simplify Your Studies with Quality Notes',
+  siteDescription: 'An easier way to create contact pages!',
   links: {
-    siteUrl: 'https://notease-ps.vercel.app/',
-    ogImage: 'https://notease-ps.vercel.app/images/preview.png',
-    twitterImage: 'https://notease-ps.vercel.app/images/preview.png',
-    twitter: '@notease',
+    siteUrl: 'https://contact-priyanshu-ps.vercel.app/',
+    ogImage: 'https://contact-priyanshu-ps.vercel.app/images/preview.png',
+    twitterImage: 'https://contact-priyanshu-ps.vercel.app/images/preview.png',
+    twitter: '@nsmail',
   },
 }
 
 export const generateMetadata = ({
   title = `${process.env.NEXT_PUBLIC_APP_NAME} - Home`,
-  description = `Simplify Your Studies with Quality Notes`,
+  description = `An easier way to create contact pages!`,
   image = '/thumbnail.png',
   icons = [
     {
       rel: 'apple-touch-icon',
       sizes: '32x32',
-      url: '/icons/logo.png',
+      url: '/icons/logo-polka.png',
     },
     {
       rel: 'icon',
       sizes: '32x32',
-      url: '/icons/logo.png',
+      url: '/icons/logo-polka.png',
     },
   ],
   noIndex = false,

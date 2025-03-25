@@ -106,84 +106,79 @@ const ContactForm = () => {
                 Please let me know your doubt through the form below!
               </p>
             </AnimationContainer>
-
-            <AnimationContainer delay={0.2}>
-              <form onSubmit={handleSubmit}>
-                <div className="mx-4 flex h-auto flex-col items-center justify-center overflow-hidden rounded-lg">
-                  <Card className="w-full max-w-2xl rounded-lg dark:border-neutral-800 dark:bg-transparent">
-                    <CardHeader className="text-center">
-                      <CardTitle className="text-2xl font-semibold text-neutral-800 dark:text-rose-100/90">
-                        Mail Box
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <Label htmlFor="name" className="text-neutral-800 dark:text-rose-100/90">
-                        Name
-                      </Label>
-                      <Input
-                        id="name"
-                        placeholder="Enter your name"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        className="text-neutral-900 dark:text-neutral-100"
-                      />
-                      {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
-
-                      <Label htmlFor="email" className="text-neutral-800 dark:text-rose-100/90">
-                        Email
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        className="text-neutral-900 dark:text-neutral-100"
-                      />
-                      {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
-
-                      <Label htmlFor="message" className="text-neutral-800 dark:text-rose-100/90">
-                        Message
-                      </Label>
-                      <Textarea
-                        id="message"
-                        placeholder="Enter your message"
-                        value={message}
-                        onChange={e => setMessage(e.target.value)}
-                        className="text-neutral-900 dark:text-neutral-100"
-                        rows={10}
-                      />
-                      {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
-
-                      <Label
-                        htmlFor="attachments"
-                        className="text-neutral-800 dark:text-rose-100/90"
-                      >
-                        Pictures
-                      </Label>
-                      <Input
-                        id="attachments"
-                        type="file"
-                        multiple
-                        onChange={e => setAttachments(e.target.files)}
-                      />
-                    </CardContent>
-                    <CardFooter>
-                      <Button
-                        variant="default"
-                        type="submit"
-                        className="w-full gap-2 py-3 text-sm font-bold dark:bg-rose-200 dark:text-neutral-900"
-                      >
-                        <SendIcon className="h-6 w-6" /> Send Message
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </div>
-              </form>
-            </AnimationContainer>
           </div>
         </div>
       </div>
+
+      {/* Contact Forum Section */}
+      <AnimationContainer delay={0.2}>
+        <form onSubmit={handleSubmit}>
+          <div className="mx-4 flex h-auto flex-col items-center justify-center overflow-hidden rounded-2xl">
+            <Card className="w-full rounded-2xl dark:border-neutral-800 dark:bg-transparent">
+              <CardHeader className="text-center"></CardHeader>
+              <CardContent>
+                <Label htmlFor="name" className="text-muted-foreground">
+                  Name
+                </Label>
+                <Input
+                  id="name"
+                  placeholder="Enter your name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  className="rounded-xl text-neutral-900 dark:text-neutral-100"
+                />
+                {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
+
+                <Label htmlFor="email" className="text-muted-foreground">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  className="rounded-xl text-neutral-900 dark:text-neutral-100"
+                />
+                {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
+
+                <Label htmlFor="message" className="text-muted-foreground">
+                  Message
+                </Label>
+                <Textarea
+                  id="message"
+                  placeholder="Enter your message"
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
+                  className="rounded-xl text-neutral-900 dark:text-neutral-100"
+                  rows={10}
+                />
+                {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
+
+                <Label htmlFor="attachments" className="text-muted-foreground">
+                  Pictures
+                </Label>
+                <Input
+                  id="attachments"
+                  type="file"
+                  multiple
+                  onChange={e => setAttachments(e.target.files)}
+                  className="rounded-xl"
+                />
+              </CardContent>
+              <CardFooter>
+                <Button
+                  variant="default"
+                  type="submit"
+                  className="w-full gap-2 rounded-xl py-3 text-sm font-bold"
+                >
+                  <SendIcon className="h-6 w-6" /> Send Message
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </form>
+      </AnimationContainer>
     </Wrapper>
   )
 }

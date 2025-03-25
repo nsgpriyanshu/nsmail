@@ -30,7 +30,7 @@ const PlatformMetrics = () => {
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={0.5}>
-            <Link href="/contact">
+            <Link href="/">
               {' '}
               {/* Change to your contact page or signup, as needed */}
               <Button className="mt-4">Contact Us</Button>

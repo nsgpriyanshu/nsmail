@@ -42,9 +42,9 @@ const Hero = () => {
 
           <AnimationContainer animation="fadeUp" delay={0.8}>
             <div className="w-full">
-              <Link href="/dashboard/notes">
+              <Link href="/">
                 <Button size="md" className="w-full md:w-auto">
-                  Send a Message
+                  Explore Now
                 </Button>
               </Link>
             </div>

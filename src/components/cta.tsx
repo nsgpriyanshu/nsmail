@@ -87,7 +87,7 @@ const CTA = () => {
           </AnimationContainer>
 
           <AnimationContainer animation="fadeUp" delay={1}>
-            <Link href="/documentation">
+            <Link href="/">
               {' '}
               {/* Replace with your documentation link */}
               <Button size="lg" className="mt-6">
