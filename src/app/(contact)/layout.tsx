@@ -1,3 +1,4 @@
+import { FlickeringGrid } from '@/components/ui/flick-grid'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -18,5 +19,19 @@ export const metadata: Metadata = {
 }
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
-  return <main className="relative w-full">{children}</main>
+  return (
+    <main className="relative w-full">
+      <FlickeringGrid
+        className="absolute inset-0 z-0 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="oklch(0.56 0 0)"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+        height={typeof window !== 'undefined' ? window.innerHeight : 0}
+        width={typeof window !== 'undefined' ? window.innerWidth : 0}
+      />
+      {children}
+    </main>
+  )
 }

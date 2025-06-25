@@ -67,7 +67,7 @@ export default function Landing() {
   return (
     <Wrapper className="flex min-h-screen items-center justify-center py-16">
       <AnimationContainer animation="fadeUp" delay={0.2} className="w-auto max-w-4xl">
-        <div className="border-primary/20 bg-primary/5 dark:bg-background/10 rounded-[40px] border px-8 py-12 backdrop-blur-md dark:border-white/10">
+        <div className="border-primary/20 bg-primary/5 dark:bg-background/10 rounded-[40px] border px-8 py-12 backdrop-blur-sm dark:border-white/10">
           <form onSubmit={handleSubmit} className="w-full max-w-md space-y-6">
             <div className="space-y-2 text-left">
               <h2 className="text-foreground text-3xl font-bold">Send a Message</h2>
