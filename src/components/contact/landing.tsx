@@ -67,11 +67,11 @@ export default function Landing() {
   return (
     <Wrapper className="flex min-h-screen items-center justify-center py-16">
       <AnimationContainer animation="fadeUp" delay={0.2} className="w-auto max-w-4xl">
-        <div className="border-primary/20 bg-primary/5 dark:bg-background/10 rounded-[40px] border px-8 py-12 backdrop-blur-sm dark:border-white/10">
+        <div className="border-border bg-card/30 rounded-[40px] border px-8 py-12 shadow-xl backdrop-blur-sm">
           <form onSubmit={handleSubmit} className="w-full max-w-md space-y-6">
             <div className="space-y-2 text-left">
-              <h2 className="text-foreground text-3xl font-bold">Send a Message</h2>
-              <p className="text-muted-foreground text-sm">
+              <h2 className="text-primary text-3xl font-bold">Send a Message</h2>
+              <p className="text-foreground text-sm">
                 Fill out the form below to get in touch with us.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function Landing() {
               value={form.name}
               onChange={handleChange}
               required
-              className="bg-primary/10 border-primary/20 text-foreground focus:ring-primary dark:border-white/10 dark:bg-white/5"
+              className="bg-muted/20 border-border text-foreground focus:ring-ring border backdrop-blur-md"
             />
             <Input
               placeholder="Your email"
@@ -91,7 +91,7 @@ export default function Landing() {
               value={form.email}
               onChange={handleChange}
               required
-              className="bg-primary/10 border-primary/20 text-foreground focus:ring-primary dark:border-white/10 dark:bg-white/5"
+              className="bg-muted/20 border-border text-foreground focus:ring-ring border backdrop-blur-md"
             />
             <Textarea
               placeholder="Your message"
@@ -99,20 +99,20 @@ export default function Landing() {
               value={form.message}
               onChange={handleChange}
               required
-              className="bg-primary/10 border-primary/20 text-foreground focus:ring-primary min-h-[120px] dark:border-white/10 dark:bg-white/5"
+              className="bg-muted/20 border-border text-foreground focus:ring-ring min-h-[120px] border backdrop-blur-md"
             />
             <Input
               type="file"
               name="attachment"
               onChange={handleFileChange}
               accept="*/*"
-              className="text-muted-foreground file:bg-primary/10 file:text-foreground file:border-primary/20 dark:file:bg-white/5"
+              className="bg-muted/20 border-border text-foreground file:border-border file:bg-muted/30 file:text-foreground border backdrop-blur-md file:mr-4 file:rounded-md file:border"
             />
 
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-primary/10 text-foreground hover:bg-primary/20 h-12 w-full rounded-lg backdrop-blur-sm transition-colors dark:bg-white/5 dark:hover:bg-white/10"
+              className="bg-primary text-background hover:bg-primary/90 h-12 w-full rounded-lg transition-colors"
             >
               <Send className="mr-2 h-5 w-5" />
               {isSubmitting ? 'Sending...' : 'Send Message'}
