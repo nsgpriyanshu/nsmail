@@ -1,28 +1,36 @@
-import { Geist, Geist_Mono } from 'next/font/google';
-import '../styles/globals.css';
-import { ThemeTogglerButton } from '@/components/animate-ui/components/buttons/theme-toggler';
+import { Geist, Geist_Mono } from 'next/font/google'
+import '../styles/globals.css'
+import { ThemeProvider } from '@/components/global/theme-provider'
+import { Toaster } from 'sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
-});
+})
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
-});
+})
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeTogglerButton className="fixed top-4 right-4 z-50" />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster richColors position="top-right" />
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
