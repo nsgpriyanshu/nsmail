@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { ArchiveX, Command, File, Inbox, Send, Trash2 } from 'lucide-react'
+import { Calendar, Inbox, Mail, Sparkle } from 'lucide-react'
 
 import { NavUser } from '@/components/nav-user'
 import { Label } from '@/components/ui/label'
@@ -46,16 +46,14 @@ function badgeColor(type: string) {
 
 const data = {
   user: {
-    name: 'shadcn',
-    email: 'm@example.com',
+    name: 'Priyanshu',
+    email: 'Use this from',
     avatar: '/avatars/shadcn.jpg',
   },
   navMain: [
     { title: 'Inbox', url: '#', icon: Inbox, isActive: true },
-    { title: 'Drafts', url: '#', icon: File },
-    { title: 'Sent', url: '#', icon: Send },
-    { title: 'Junk', url: '#', icon: ArchiveX },
-    { title: 'Trash', url: '#', icon: Trash2 },
+    { title: 'Calendar', url: '#', icon: Calendar },
+    { title: 'Reviews', url: '#', icon: Sparkle },
   ],
   mails: [
     {
@@ -130,7 +128,7 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
               <SidebarMenuButton size="lg" asChild className="md:h-8 md:p-0">
                 <a href="#">
                   <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                    <Command className="size-4" />
+                    <Mail className="size-4" />
                   </div>
                   <div className="grid flex-1 text-left text-sm leading-tight">
                     <span className="truncate font-medium">Acme Inc</span>
