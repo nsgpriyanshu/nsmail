@@ -1,5 +1,3 @@
-'use client'
-
 import { AppSidebar, INBOX_RULES } from '@/components/app-sidebar'
 import { ContactForm } from '@/components/contact/contact-form'
 import { ModeToggle } from '@/components/global/theme-toggel'
@@ -17,9 +15,7 @@ import { RulesList } from '@/components/global/rule-list'
 
 export default function InboxPage() {
   return (
-    <SidebarProvider
-      style={{ '--sidebar-width': '350px' } as React.CSSProperties}
-    >
+    <SidebarProvider style={{ '--sidebar-width': '350px' } as React.CSSProperties}>
       <AppSidebar />
 
       <SidebarInset>
@@ -57,7 +53,7 @@ export default function InboxPage() {
         </header>
 
         {/* Main content */}
-        <div className="flex flex-1 flex-col justify-center items-center p-6">
+        <div className="flex flex-1 flex-col items-center justify-center p-6">
           <div className="w-full max-w-xl space-y-6">
             <ContactForm />
 

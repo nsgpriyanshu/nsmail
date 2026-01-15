@@ -1,11 +1,7 @@
 'use client'
 
 import { CalendarView } from '@/components/calendar/calendar-view'
-import {
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-} from '@/components/ui/sidebar'
+import { SidebarGroup, SidebarGroupContent, SidebarGroupLabel } from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
 import { CALENDAR_RULES } from '@/components/app-sidebar/index'
 
@@ -26,9 +22,7 @@ export function SidebarCalendar() {
             <div key={rule.title} className="p-4 text-sm">
               <div className="font-medium">{rule.title}</div>
 
-              <div className="mt-1 text-xs text-muted-foreground">
-                {rule.description}
-              </div>
+              <div className="text-muted-foreground mt-1 text-xs">{rule.description}</div>
 
               <span
                 className={cn(

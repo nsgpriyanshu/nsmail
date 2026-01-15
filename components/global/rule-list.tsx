@@ -23,11 +23,11 @@ export function RulesList({ title, rules }: RulesListProps) {
         {rules.map(rule => (
           <div key={rule.title} className="flex flex-col gap-2 p-4 text-sm">
             <div className="flex w-full items-start justify-between gap-2">
-              <div className="font-semibold text-foreground flex-1">{rule.title}</div>
+              <div className="text-foreground flex-1 font-semibold">{rule.title}</div>
               <span
                 className={cn(
                   'rounded-full px-2 py-1 text-xs font-medium whitespace-nowrap',
-                  rule.color
+                  rule.color,
                 )}
               >
                 {rule.type}

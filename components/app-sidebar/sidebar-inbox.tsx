@@ -12,9 +12,7 @@ export function SidebarInbox() {
           <div key={rule.title} className="p-4 text-sm">
             <div className="font-medium">{rule.title}</div>
 
-            <div className="mt-1 text-xs text-muted-foreground">
-              {rule.description}
-            </div>
+            <div className="text-muted-foreground mt-1 text-xs">{rule.description}</div>
 
             <span
               className={cn(

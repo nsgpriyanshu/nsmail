@@ -4,8 +4,18 @@ import { cn } from '@/lib/utils'
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const MONTHS = [
-  'January','February','March','April','May','June',
-  'July','August','September','October','November','December',
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ]
 
 export function CalendarView({
@@ -28,22 +38,23 @@ export function CalendarView({
   let day = 1
   let saturdayCount = 0
 
-  // ───── Events inside the same file
+  // ───── Birthday Event
   const EVENTS = [
     {
-      date: `${year}-07-19`,
+      date: `${year}-07-19`, // birthday
       title: 'Birth Day',
       description: 'Today is my birthday!',
       color: 'text-yellow-700 dark:text-yellow-300',
     },
   ]
 
-  // ───── Map events by day for easy lookup
-  const eventsMap: Record<number, typeof EVENTS> = {}
+  // ───── Map events by full date (YYYY-M-D) to prevent showing in other months
+  const eventsMap: Record<string, typeof EVENTS> = {}
   EVENTS.forEach(ev => {
-    const dayNum = Number(ev.date.split('-')[2])
-    if (!eventsMap[dayNum]) eventsMap[dayNum] = []
-    eventsMap[dayNum].push(ev)
+    const [y, m, d] = ev.date.split('-').map(Number)
+    const key = `${y}-${m}-${d}`
+    if (!eventsMap[key]) eventsMap[key] = []
+    eventsMap[key].push(ev)
   })
 
   return (
@@ -77,21 +88,24 @@ export function CalendarView({
           const specialSat = isSaturday && (saturdayCount === 2 || saturdayCount === 4)
           const isToday = date === currentDate && month === currentMonth && year === currentYear
 
-          const dayEvents = date ? eventsMap[date] || [] : []
+          // ───── Lookup events using full date
+          const key = date ? `${year}-${month + 1}-${date}` : null
+          const dayEvents = key ? eventsMap[key] || [] : []
 
           // ───── Date style
           let dateStyle = ''
           if (isToday) dateStyle = 'border-green-500 bg-green-500/20 text-green-700 font-semibold'
           else if (isSunday) dateStyle = 'border-red-500 bg-red-500/10 text-red-600'
           else if (specialSat) dateStyle = 'border-blue-500 bg-blue-500/10 text-blue-600'
-          else if (dayEvents.length > 0) dateStyle = 'border-yellow-500 bg-yellow-500/20 text-yellow-700 font-semibold'
+          else if (dayEvents.length > 0)
+            dateStyle = 'border-yellow-500 bg-yellow-500/20 text-yellow-700 font-semibold'
 
           return (
             <div
               key={i}
               className={cn(
-                'flex h-14 flex-col items-center justify-center rounded-lg border text-sm text-center p-1',
-                dateStyle
+                'flex h-14 flex-col items-center justify-center rounded-lg border p-1 text-center text-sm',
+                dateStyle,
               )}
             >
               {date}
@@ -101,7 +115,7 @@ export function CalendarView({
                   key={ev.title}
                   className={cn(
                     'mt-1 w-full truncate rounded px-1 text-[10px] font-medium',
-                    ev.color
+                    ev.color,
                   )}
                   title={ev.title + ': ' + ev.description}
                 >
