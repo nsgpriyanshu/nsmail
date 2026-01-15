@@ -1,5 +1,6 @@
 import { AppSidebar } from '@/components/app-sidebar'
-import { ContactForm } from '@/components/contact-form'
+import { CalendarView } from '@/components/calendar/calendar-view'
+
 import { ModeToggle } from '@/components/global/theme-toggel'
 import {
   Breadcrumb,
@@ -12,7 +13,7 @@ import {
 import { Separator } from '@/components/ui/separator'
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 
-export default function Page() {
+export default function CalendarPage() {
   return (
     <SidebarProvider
       style={
@@ -22,48 +23,48 @@ export default function Page() {
       }
     >
       <AppSidebar />
+
       <SidebarInset>
-        <header className="bg-background sticky top-0 flex shrink-0 items-center justify-between border-b p-4">
-          {/* Left side */}
+        <header className="bg-background sticky top-0 flex items-center justify-between border-b p-4">
           <div className="flex items-center gap-2">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 data-[orientation=vertical]:h-4" />
+
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">Earth</BreadcrumbLink>
+                  <BreadcrumbLink href="/">Earth</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
 
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">Asia</BreadcrumbLink>
+                  <BreadcrumbLink href="/">Asia</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
 
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">India</BreadcrumbLink>
+                  <BreadcrumbLink href="/">India</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
 
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">Priysanshu's</BreadcrumbLink>
+                  <BreadcrumbLink href="/">Priysanshu's</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
 
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Inbox</BreadcrumbPage>
+                  <BreadcrumbPage>Calendar</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
 
-          {/* Right side */}
           <ModeToggle />
         </header>
 
         <div className="flex flex-1 justify-center p-6">
-          <div className="w-full max-w-xl space-y-6">
-            <ContactForm />
+          <div className="w-full max-w-2xl">
+            <CalendarView year={2026} month={0} />
           </div>
         </div>
       </SidebarInset>
