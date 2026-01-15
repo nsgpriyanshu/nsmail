@@ -1,6 +1,7 @@
-import { AppSidebar } from '@/components/app-sidebar'
-import { CalendarView } from '@/components/calendar/calendar-view'
+'use client'
 
+import { AppSidebar, CALENDAR_RULES } from '@/components/app-sidebar'
+import { CalendarView } from '@/components/calendar/calendar-view'
 import { ModeToggle } from '@/components/global/theme-toggel'
 import {
   Breadcrumb,
@@ -12,19 +13,17 @@ import {
 } from '@/components/ui/breadcrumb'
 import { Separator } from '@/components/ui/separator'
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+import { RulesList } from '@/components/global/rule-list'
 
 export default function CalendarPage() {
   return (
     <SidebarProvider
-      style={
-        {
-          '--sidebar-width': '350px',
-        } as React.CSSProperties
-      }
+      style={{ '--sidebar-width': '350px' } as React.CSSProperties}
     >
       <AppSidebar />
 
       <SidebarInset>
+        {/* Header */}
         <header className="bg-background sticky top-0 flex items-center justify-between border-b p-4">
           <div className="flex items-center gap-2">
             <SidebarTrigger className="-ml-1" />
@@ -62,9 +61,16 @@ export default function CalendarPage() {
           <ModeToggle />
         </header>
 
-        <div className="flex flex-1 justify-center p-6">
-          <div className="w-full max-w-2xl">
+        {/* Main content */}
+        <div className="flex flex-1 flex-col items-center justify-center p-6">
+          <div className="w-full max-w-2xl space-y-6">
+            {/* Calendar view */}
             <CalendarView year={2026} month={0} />
+
+            {/* Rules below calendar on mobile only */}
+            <div className="md:hidden">
+              <RulesList rules={CALENDAR_RULES} title="Rules & Guidelines" />
+            </div>
           </div>
         </div>
       </SidebarInset>

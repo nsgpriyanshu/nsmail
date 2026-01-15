@@ -1,12 +1,11 @@
 'use client'
 
 import * as React from 'react'
-import { ArchiveX, Command, File, Inbox, Send, Trash2, Calendar, Mail } from 'lucide-react'
+import { Inbox, Calendar, Mail } from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
 import { NavUser } from '@/components/app-sidebar/nav-user'
-import { Label } from '@/components/ui/label'
 import {
   Sidebar,
   SidebarContent,
@@ -20,47 +19,73 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar'
-import { Switch } from '@/components/ui/switch'
 
 const INBOX_RULES = [
   {
     title: 'One Message Only',
-    description: 'Keep conversations focused with single messages',
+    description: 'Keep conversations focused with a single message',
     type: 'Policy',
-    color: 'bg-amber-100 text-amber-700',
+    color:
+      'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
+  },
+  {
+    title: 'Clear & Relevant',
+    description: 'Ask clearly so we can help faster',
+    type: 'Guideline',
+    color:
+      'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
   },
   {
     title: 'Response Time',
-    description: 'Aim to respond within 24 hours',
+    description: 'Expect replies within 24 hours',
     type: 'Guideline',
-    color: 'bg-blue-100 text-blue-700',
+    color:
+      'bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300',
   },
   {
     title: 'Maintain Respect',
-    description: 'Always be professional and courteous',
+    description: 'Be professional and courteous',
     type: 'Mandatory',
-    color: 'bg-red-100 text-red-700',
+    color:
+      'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300',
+  },
+  {
+    title: 'Follow Instructions',
+    description: 'Read and follow given steps carefully',
+    type: 'Mandatory',
+    color:
+      'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
   },
 ]
 
 const CALENDAR_RULES = [
   {
-    title: 'Schedule in Advance',
-    description: 'Plan meetings at least 2 days ahead',
+    title: 'No Messages on Sundays',
+    description: 'Please do not message me on Sundays',
     type: 'Policy',
-    color: 'bg-amber-100 text-amber-700',
+    color:
+      'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300',
   },
   {
-    title: 'Check Availability',
-    description: 'Verify free slots before scheduling',
+    title: 'Available Except Sundays',
+    description: 'You can message me anytime except Sunday',
     type: 'Guideline',
-    color: 'bg-blue-100 text-blue-700',
+    color:
+      'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300',
   },
   {
-    title: 'Confirm Meetings',
-    description: 'Send confirmation 24 hours before event',
+    title: 'No Work Messages on My Birthday',
+    description: 'Please avoid work-related messages on my birthday',
     type: 'Mandatory',
-    color: 'bg-red-100 text-red-700',
+    color:
+      'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300',
+  },
+  {
+    title: 'Birthday Wishes Required',
+    description: 'You must wish me on my birthday',
+    type: 'Mandatory',
+    color:
+      'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
   },
 ]
 
@@ -200,3 +225,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     </Sidebar>
   )
 }
+
+export { INBOX_RULES, CALENDAR_RULES }

@@ -1,14 +1,13 @@
 'use client'
 
 import { CalendarView } from '@/components/calendar/calendar-view'
-import { SidebarGroup, SidebarGroupContent, SidebarGroupLabel } from '@/components/ui/sidebar'
+import {
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+} from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
-
-const RULES = [
-  { title: 'One Message Only', type: 'Policy' },
-  { title: 'Response Time', type: 'Guideline' },
-  { title: 'Maintain Respect', type: 'Mandatory' },
-]
+import { CALENDAR_RULES } from '@/components/app-sidebar/index'
 
 export function SidebarCalendar() {
   return (
@@ -23,18 +22,22 @@ export function SidebarCalendar() {
       <SidebarGroup className="h-auto">
         <SidebarGroupLabel>Rules & Guidelines</SidebarGroupLabel>
         <SidebarGroupContent className="divide-y">
-          {RULES.map(rule => (
+          {CALENDAR_RULES.map(rule => (
             <div key={rule.title} className="p-4 text-sm">
               <div className="font-medium">{rule.title}</div>
-              <div
+
+              <div className="mt-1 text-xs text-muted-foreground">
+                {rule.description}
+              </div>
+
+              <span
                 className={cn(
-                  'mt-1 text-xs',
-                  rule.type === 'Mandatory' && 'text-red-600',
-                  rule.type === 'Policy' && 'text-amber-600',
+                  'mt-2 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium',
+                  rule.color,
                 )}
               >
                 {rule.type}
-              </div>
+              </span>
             </div>
           ))}
         </SidebarGroupContent>
