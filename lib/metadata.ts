@@ -8,8 +8,8 @@ const siteConfig = {
     discord: 'https://discord.gg/VUMVuArkst',
     twitter: '@nsgpriyanshu',
     siteUrl: 'https://nsmail.vercel.app/',
-    ogImage: '/og/og-main.png',
-    twitterImage: '/og/og-main.png',
+    ogImage: '/og-main.png',
+    twitterImage: '/og-main.png',
   },
 }
 
