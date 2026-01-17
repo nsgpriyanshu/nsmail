@@ -25,25 +25,54 @@ import {
 } from '@/components/ui/input-group'
 import { MailIcon, RefreshCcwDotIcon, SendHorizonal } from 'lucide-react'
 
+type ExtendedContactFormValues = ContactFormValues & {
+  attachment?: File | null
+}
+
 export function ContactForm() {
-  const form = useForm<ContactFormValues>({
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+
+  const form = useForm<ExtendedContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       name: '',
       email: '',
       message: '',
+      attachment: null,
     },
   })
 
-  function onSubmit(data: ContactFormValues) {
+  const onSubmit = async (data: ExtendedContactFormValues) => {
+    setIsSubmitting(true)
+
     try {
-      console.log(data)
+      const formData = new FormData()
+      formData.append('name', data.name)
+      formData.append('email', data.email)
+      formData.append('message', data.message)
+
+      if (data.attachment) {
+        formData.append('attachment', data.attachment)
+      }
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result?.message || 'Failed to send message')
+      }
 
       toast.success('Message sent successfully!')
-
       form.reset()
-    } catch {
+    } catch (error) {
+      console.error('Contact form error:', error)
       toast.error('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -51,7 +80,6 @@ export function ContactForm() {
     <Card className="w-full max-w-xl">
       <CardHeader>
         <CardTitle>
-          {' '}
           <MailIcon className="mr-2 inline-block" /> Mail
         </CardTitle>
         <CardDescription>
@@ -127,18 +155,41 @@ export function ContactForm() {
                 </Field>
               )}
             />
+
+            {/* Attachment */}
+            <Controller
+              name="attachment"
+              control={form.control}
+              render={({ field }) => (
+                <Field>
+                  <FieldLabel htmlFor="contact-attachment">Attachment</FieldLabel>
+                  <Input
+                    id="contact-attachment"
+                    type="file"
+                    accept="*/*"
+                    onChange={e => field.onChange(e.target.files?.[0] || null)}
+                  />
+                </Field>
+              )}
+            />
           </FieldGroup>
         </form>
       </CardContent>
 
       <CardFooter className="flex justify-end gap-2">
-        <Button type="button" variant="outline" onClick={() => form.reset()}>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => form.reset()}
+          disabled={isSubmitting}
+        >
           <RefreshCcwDotIcon className="mr-2 inline-block" />
           Reset
         </Button>
-        <Button type="submit" form="contact-form">
+
+        <Button type="submit" form="contact-form" disabled={isSubmitting}>
           <SendHorizonal className="mr-2 inline-block -rotate-45" />
-          Send Message
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
       </CardFooter>
     </Card>
